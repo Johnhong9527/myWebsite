@@ -16,3 +16,8 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea
+
+/www/protected/package-lock.json
+/www/protected/yarn.lock
+# node_modules
+/www/protected/node_modules
