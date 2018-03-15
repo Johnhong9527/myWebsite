@@ -1,13 +1,49 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+// import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      info: null
+    }
+  }
+
+  componentDidMount() {
+    const apiUrl = `http://localhost:3000/api`;
+    fetch(apiUrl).then((resq) => {
+      if (resq.status !== 200) throw new Error('fail to get response with status:' + resq.status);
+      resq.json().then((resqJson) => {
+        this.setState({
+          info: resqJson
+        });
+      }).catch((err) => {
+        this.setState({
+          info: null
+        });
+      })
+    })
+      .catch((err) => {
+        this.setState({
+          info: null
+        })
+      })
+  }
+
+  render(){
+    if(!this.state.info) return <div>暂无数据</div>
+    const {info}=this.state;
+    return (
+      <div>{info}</div>
+    )
+  }
+
+  /*render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="logo"/>
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
@@ -15,7 +51,7 @@ class App extends Component {
         </p>
       </div>
     );
-  }
+  }*/
 }
 
 export default App;
