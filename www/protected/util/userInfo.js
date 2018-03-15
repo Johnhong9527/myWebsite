@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const users = require('../model/user_model')
 function userInfo(params,cb){
+
 	mongoose.connect('mongodb://localhost:27017/test');
 
 	params.regTime = Date.parse(new Date())/1000
