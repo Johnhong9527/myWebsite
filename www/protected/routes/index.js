@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var userInfo = require('../util/userInfo');
-
 /* GET home page. */
 router.get('/', function (req, res) {
-  console.log(456);
-  res.send('123')
-  // res.render('index', {title: 'Express'});
+  console.log(index++);
+  res.render('index', {title: 'Express'});
   // next();
 });
 
@@ -15,10 +13,8 @@ router.get('/', function (req, res) {
 })*/
 
 router.use('/api', function (req, res) {
-  console.log('456');
-  // console.log(req.url);
-  res.json('123');
-  // next();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.send('访问成功！');
   /* const that = res;
    let  i = 1;
    if(i ==1){
@@ -32,8 +28,6 @@ router.use('/api', function (req, res) {
        }, res => that.send(res));
      i = 2;
    }*/
-
-
-})
+});
 
 module.exports = router;
