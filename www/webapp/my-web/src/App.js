@@ -13,8 +13,11 @@ class App extends Component {
   componentDidMount() {
     const apiUrl = `http://localhost:3000/api`;
     fetch(apiUrl).then((resq) => {
+      console.log(resq);
       if (resq.status !== 200) throw new Error('fail to get response with status:' + resq.status);
       resq.json().then((resqJson) => {
+        console.log(resqJson);
+        console.log(123)
         this.setState({
           info: resqJson
         });
@@ -23,17 +26,16 @@ class App extends Component {
           info: null
         });
       })
-    })
-      .catch((err) => {
-        this.setState({
-          info: null
-        })
+    }).catch((err) => {
+      this.setState({
+        info: null
       })
+    })
   }
 
-  render(){
-    if(!this.state.info) return <div>暂无数据</div>
-    const {info}=this.state;
+  render() {
+    if (!this.state.info) return <div>暂无数据{this.state.info}</div>
+    const {info} = this.state;
     return (
       <div>{info}</div>
     )
