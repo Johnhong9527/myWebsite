@@ -1,5 +1,7 @@
 # mongo
 
+## [官网安装](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
+
 ```
 1、添加 MongoDB 公共GPG钥匙。
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
