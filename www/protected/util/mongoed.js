@@ -1,24 +1,23 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-console.log(3);
 const GITHUB_ISSUE = `test`;
 const connectionString = `mongodb://jsmith:some-initial-password@localhost:27017/${ GITHUB_ISSUE }`;
 
-function userInfo(){
-	console.log(7);
-	run().catch(error=> console.error(error.stack));
-	console.log(9);
-	async function run() {
-		await mongoose.connect(connectionString);
+function userInfo() {
 
-		const schema = new mongoose.Schema({ name: String })
+  run().catch(error => console.error(error.stack));
 
-		const Model = mongoose.model('Model', schema);
+  async function run() {
 
-		console.log(await Model.create({ name: 'test' }));
+    await mongoose.connect(connectionString);
 
+    const schema = new mongoose.Schema({name: String});
 
-	}
+    const Model = mongoose.model('Model', schema);
+
+    console.log(await Model.create({name: 'test'}));
+
+  }
 }
 
 
@@ -30,11 +29,11 @@ function userInfo(params,cb){
 	const user = new users(params);
 	user.save().then(() => cb('ok'));*/
 
-	/*const Cat = mongoose.model('Cat', { name: String });
-	const kitty = new Cat({ name: 'Zildjian' });
-	kitty.save().then(() => cb('ok'));*/
-	/*}*/
-	module.exports = userInfo;
+/*const Cat = mongoose.model('Cat', { name: String });
+const kitty = new Cat({ name: 'Zildjian' });
+kitty.save().then(() => cb('ok'));*/
+/*}*/
+module.exports = userInfo;
 /*
 usernfo 
 	set
