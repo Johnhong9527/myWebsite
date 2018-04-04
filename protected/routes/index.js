@@ -52,17 +52,29 @@ router.post('/findUser', function(req, res) {
 // 跨域params
 router.all('/cros', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  console.log(55);
-  console.log(req.query);
-  let _res = res,
-    _url = req.body.url;
-  console.log(_url);
-  console.log(req.Url);
-  request
-    .post(_url)
-    .charset('UTF-8')
-    .end(function(req, resq) {
-      _res.pipe(resq.text);
-    });
+  let url_str = '',
+    _res = res;
+  // 区分 POST 与 GET 请求
+  if (req.method == 'POST') {
+    url_str = req.body.url;
+  } else if (req.method == 'GET') {
+    let _res = res,
+      _url = req.url,
+      _index = _url.indexOf('http');
+    url_str = req.url.slice(_index);
+  }
+  console.log('url_str____:  ' + url_str);
+  // console.log(JSON.stringify(url_str))
+  // _res.send('ok');
+  // return;
+  setTimeout(() => {
+    console.log(url_str);
+    request
+      .get(url_str)
+      .charset('UTF-8')
+      .end(function(req, resq) {
+        _res.send(resq.text);
+      });
+  }, 100);
 });
 module.exports = router;
