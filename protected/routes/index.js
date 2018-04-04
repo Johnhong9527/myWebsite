@@ -58,17 +58,11 @@ router.all('/cros', function(req, res, next) {
   if (req.method == 'POST') {
     url_str = req.body.url;
   } else if (req.method == 'GET') {
-    let _res = res,
-      _url = req.url,
+    let _url = req.url,
       _index = _url.indexOf('http');
     url_str = req.url.slice(_index);
   }
-  console.log('url_str____:  ' + url_str);
-  // console.log(JSON.stringify(url_str))
-  // _res.send('ok');
-  // return;
   setTimeout(() => {
-    console.log(url_str);
     request
       .get(url_str)
       .charset('UTF-8')
