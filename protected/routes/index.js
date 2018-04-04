@@ -49,10 +49,11 @@ router.post('/findUser', function(req, res) {
   //   phone: 15868600329,
   // })
 });
-// 跨域
-router.all('/cros：url', function(req, res, next) {
+// 跨域params
+router.all('/cros', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  console.log(req.query)
+  console.log(55);
+  console.log(req.query);
   let _res = res,
     _url = req.body.url;
   console.log(_url);
