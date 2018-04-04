@@ -53,7 +53,7 @@ router.all('/cros', function(req, res, next) {
   let _res = res,
     _url = req.body.url;
   console.log(_url)
-  console.log(req.body.url);
+  console.log(req);
   request
     .post(_url)
     .charset('UTF-8')
