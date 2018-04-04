@@ -48,13 +48,13 @@ router.post('/findUser', function(req, res) {
   })
 })
 // 跨域
-router.all('/cros', function(req, res, next) {
+router.all('/cros', function(req, resq, next) {
   res.header('Access-Control-Allow-Origin', '*')
-  let _res = res,
+  let _res = resq,
     _url = req.originalUrl,
     _index = _url.indexOf('http');
   _url = req.url.slice(_index);
-  console.log(req.originalUrl);
+  console.log(req);
   console.log(_url);
   request
     .post(_url)
