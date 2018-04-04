@@ -41,4 +41,14 @@ router.use('/findUser', function (req, res) {
   });
   res.send('访问成功！');
 })
+// 跨域
+router.all('/cros', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  let _res = res;
+  let _url = req.body.url;
+  request.post(_url).charset('UTF-8').end(function(req, res) {
+    console.log(res.text)
+    _res.send(res.text)
+  })
+})
 module.exports = router;

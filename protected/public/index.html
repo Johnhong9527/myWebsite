@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>css01-九宫格</title>
     <style>
         * { padding: 0; margin: 0; }
@@ -33,6 +34,7 @@
     </style>
 </head>
 <body>
+    <input type="" id="readme" class="readme-foucs" name="">
     <div class="main clearfix">
         <div class="box1"></div>
         <div class="box2"></div>
@@ -44,5 +46,12 @@
         <div class="box8"></div>
         <div class="box9"></div>
     </div>
+    <script type="text/javascript">
+        let $readmeFocus = document.getElementsByClassName('eadme-foucs'),
+        _readme = document.querySelector('#readme');
+        console.log(_readme);
+        _readme.focus()
+        // $readmeFocus[0].focus();
+    </script>
 </body>
 </html>

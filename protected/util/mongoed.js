@@ -5,6 +5,11 @@ const connectionString = `mongodb://jsmith:some-initial-password@localhost:27017
 
 function userInfo() {
 
+  // find
+
+
+
+
   run().catch(error => console.error(error.stack));
 
   async function run() {
