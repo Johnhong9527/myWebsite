@@ -52,7 +52,7 @@ router.post('/findUser', function(req, res) {
 // 跨域
 router.all('/cros：url', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  console.log(req.params.url)
+  console.log(req.query)
   let _res = res,
     _url = req.body.url;
   console.log(_url);
