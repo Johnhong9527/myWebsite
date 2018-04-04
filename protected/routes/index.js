@@ -53,11 +53,12 @@ router.all('/cros', function(req, res, next) {
   let _res = res,
     _url = req.body.url;
   console.log(_url)
+  console.log(req.body.url);
   request
     .post(_url)
     .charset('UTF-8')
     .end(function(req, resq) {
-      _res.json(resq.text)
+      _res.pipe(resq.text)
     })
 })
 module.exports = router
