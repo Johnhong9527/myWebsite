@@ -57,7 +57,7 @@ router.all('/cros', function(req, res, next) {
     .post(_url)
     .charset('UTF-8')
     .end(function(req, resq) {
-      _res.send(resq.text)
+      _res.json(resq.text)
     })
 })
 module.exports = router
