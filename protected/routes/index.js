@@ -54,7 +54,7 @@ router.all('/cros', function(req, res, next) {
     _url = req.url,
     _index = _url.indexOf('http');
   _url = req.url.slice(_index);
-  console.log(req);
+  console.log(req.originalUrl);
   console.log(_url);
   request
     .post(_url)
