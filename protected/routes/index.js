@@ -50,8 +50,10 @@ router.post('/findUser', function(req, res) {
 // 跨域
 router.all('/cros', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
-  let _res = res
-  let _url = req.body.url
+  let _res = res,
+    _url = req.url,
+    _index = _url.indexOf('http');
+  _url = req.url.slice(_index);
   request
     .post(_url)
     .charset('UTF-8')
