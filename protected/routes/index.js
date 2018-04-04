@@ -48,9 +48,9 @@ router.post('/findUser', function(req, res) {
   })
 })
 // 跨域
-router.all('/cros', function(req, resq, next) {
+router.all('/cros', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
-  let _res = resq,
+  let _res = res,
     _url = req.originalUrl,
     _index = _url.indexOf('http');
   _url = req.url.slice(_index);
@@ -59,8 +59,8 @@ router.all('/cros', function(req, resq, next) {
   request
     .post(_url)
     .charset('UTF-8')
-    .end(function(req, res) {
-      _res.send(res.text)
+    .end(function(req, resq) {
+      _res.send(resq.text)
     })
 })
 module.exports = router
