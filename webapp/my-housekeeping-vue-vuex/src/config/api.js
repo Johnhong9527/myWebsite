@@ -5,18 +5,13 @@ import config from "./config";
 
 // 获取用户信息
 export function getUser(userId) {
-  console.log(config.apiPath());
   return new Promise(function(resolve, reject) {
     axios
       .get(config.apiPath() + "/o2o/user/info", {
         params: { user_id: userId }
       })
-      .then(res => {
-        resolve(res);
-      })
-      .catch(erorr => {
-        reject(erorr);
-      });
+      .then(res => resolve(res))
+      .catch(erorr => reject(erorr));
   });
 }
 // 获取用户角色

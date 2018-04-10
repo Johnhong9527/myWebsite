@@ -25,10 +25,20 @@ const mutations = {
       state.info = res.data.data;
     });
   },
-  GET_USERROLE(state) {
-    getUserRole(state.user_id).then(res => {
-      state.is_teacher = res.data.is_teacher;
-    });
+  GET_USERROLE(state, self) {
+    setTimeout(() => {
+      getUserRole(state.user_id).then(res => {
+        state.is_teacher = res.data.is_teacher;
+        if (state.is_teacher === 1) {
+          self.$router.push({ path: "/h/info" });
+        } else if (state.is_teacher === 2) {
+          self.$router.push({ path: "/m/list" });
+        } else {
+          self.$router.push({ path: "/" });
+        }
+        self = null;
+      });
+    }, 100);
   }
 };
 

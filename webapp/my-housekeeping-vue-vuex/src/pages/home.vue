@@ -51,14 +51,12 @@ export default {
       footer: 'http://odulvej8l.bkt.clouddn.com/2018-01-17-8.jpg',
       registered: false,
       administrator: false,
-      userIdentity: null,
     };
   },
   methods: {
-    ...mapMutations(["GET_USERROLE", "GET_USERINFO"]),
+    ...mapMutations(['GET_USERROLE', 'GET_USERINFO']),
     cs() {
-      console.log(this.$store.state.user.info);
-      console.log(this);
+      console.log(this.$store.state);
     },
     demand(type) {
       let self = this;
@@ -96,19 +94,11 @@ export default {
     // 人员身份识别
     // 用户是否为管理员
     // self.registered = true;
-    this.GET_USERROLE();
-    this.GET_USERINFO();
-    console.log(this);
-    function init() {
-      setTimeout(function() {
-        let hBox = document.querySelector('.h-box').clientHeight;
-        let footer = document.querySelector('.footer');
-        let clientHeight = document.documentElement.clientHeight;
-        if (clientHeight - hBox < footer.clientHeight) {
-          footer.style.position = 'static';
-        }
-      }, 200);
-    }
+    this.GET_USERROLE(self);
+    // this.GET_USERINFO();
+    setTimeout(() => {
+      console.log(this.$store.state.user);
+    }, 100);
   },
 };
 </script>
