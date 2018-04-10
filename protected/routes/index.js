@@ -60,8 +60,7 @@ router.all('/cros', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   let url_str = '',
     _res = res;
-  // 区分 POST 与 GET 请求
-  // console.log(req);
+  // 区分 POST 与 GET 请求,获取数据
   if (req.method == 'POST') {
     url_str = req.query.url;
     for (let i in req.body) {
@@ -74,6 +73,7 @@ router.all('/cros', function(req, res, next) {
   } else {
     _res.send('error');
   }
+  //  字典中查询数据是否存在
   if (dictionary.has(url_str)) {
     return _res.send(dictionary.get(url_str));
   }
@@ -84,6 +84,7 @@ router.all('/cros', function(req, res, next) {
       .charset('UTF-8')
       .end(function(req, resq) {
         if (resq.text) {
+          // 将数据存入字典中
           dictionary.set(url_str, resq.text);
           _res.send(resq.text);
         } else {

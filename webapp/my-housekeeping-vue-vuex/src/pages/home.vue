@@ -96,7 +96,7 @@ export default {
     // 人员身份识别
     // 用户是否为管理员
     // self.registered = true;
-    // this.GET_USERROLE();
+    this.GET_USERROLE();
     this.GET_USERINFO();
     console.log(this);
     function init() {
