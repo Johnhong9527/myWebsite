@@ -55,8 +55,12 @@ router.all('/cros', function(req, res, next) {
   let url_str = '',
     _res = res;
   // 区分 POST 与 GET 请求
+  console.log(req);
   if (req.method == 'POST') {
-    url_str = req.body.url;
+    url_str = req.query.url;
+    for (let i in req.body) {
+      url_str += `&${i}=${req.body[i]}`;
+    }
   } else if (req.method == 'GET') {
     let _url = req.url,
       _index = _url.indexOf('http');
