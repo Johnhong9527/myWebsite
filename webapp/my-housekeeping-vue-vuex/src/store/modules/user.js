@@ -1,13 +1,15 @@
-import { getUser } from "@/config/api";
+import { getUser, getUserRole } from "@/config/api";
 import config from "@/config/config";
 
 // 常量
 const GET_USERINFO = "GET_USERINFO"; // 用户信息
+const GET_USERROLE = "GET_USERROLE"; // 用户信息
 
 // state
 const state = {
-  user_id: localStorage.getItem("wxUserID") != null ? localStorage.getItem("wxUserID") : "",
-  info: {}
+  user_id: localStorage.getItem("wxUserID1") != null ? localStorage.getItem("wxUserID1") : "",
+  info: {},
+  is_teacher: null
 };
 
 // getters
@@ -22,6 +24,29 @@ const mutations = {
     getUser(state.user_id).then(res => {
       state.info = res.data.data;
     });
+  },
+  GET_USERROLE(state, self) {
+    setTimeout(() => {
+      getUserRole(state.user_id).then(res => {
+        state.is_teacher = res.data.is_teacher;
+        if (state.is_teacher === 1) {
+          self.$router.push({ path: "/h/info" });
+        } else if (state.is_teacher === 2) {
+          self.$router.push({ path: "/m/list" });
+        } else {
+          if (
+            self.$router.currentRoute.path !== "/order" &&
+            self.$router.currentRoute.path !== "/order/list" &&
+            self.$router.currentRoute.path !== "/order/add"
+          ) {
+            self.$router.push({ path: "/" });
+          } else {
+            self.$router.push({ path: "/order/add" });
+          }
+        }
+        self = null;
+      });
+    }, 100);
   }
 };
 
