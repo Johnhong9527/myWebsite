@@ -34,7 +34,15 @@ const mutations = {
         } else if (state.is_teacher === 2) {
           self.$router.push({ path: "/m/list" });
         } else {
-          self.$router.push({ path: "/" });
+          if (
+            self.$router.currentRoute.path !== "/order" &&
+            self.$router.currentRoute.path !== "/order/list" &&
+            self.$router.currentRoute.path !== "/order/add"
+          ) {
+            self.$router.push({ path: "/" });
+          } else {
+            self.$router.push({ path: "/order/add" });
+          }
         }
         self = null;
       });

@@ -1,12 +1,14 @@
 <template>
   <div class="home-box">
     <div class="h-box">
-      <button @click='cs'>测试</button>
       <!--banner-->
       <div class="banner">
         <img :src="banner" alt="">
       </div>
       <!--套餐图-->
+      <!-- <router-link to='/order/add'>
+      /order/add
+      </router-link> -->
       <div class="home">
         <img class="m_b_5" :src="yuesao" alt="" @click='demand(1)'>
         <img class="m_b_5" src="http://odulvej8l.bkt.clouddn.com/2018-01-08-3.jpg" alt="">
@@ -53,41 +55,7 @@ export default {
       administrator: false,
     };
   },
-  methods: {
-    ...mapMutations(['GET_USERROLE', 'GET_USERINFO']),
-    cs() {
-      console.log(this.$store.state);
-    },
-    demand(type) {
-      let self = this;
-      // switch (self.userIdentity) {
-      //   case 1:
-      //     weui.alert('家政人员无法预约服务！');
-      //     return;
-      //     break;
-      //   case 2:
-      //     weui.alert('门店管理员无法预约服务！');
-      //     return;
-      //     break;
-      // }
-      // config.serviceType = null;
-      // config.serviceType = type;
-      this.$router.push({ path: '/reservation' });
-    },
-    registeredF() {
-      this.myOrder();
-    },
-    myOrder() {
-      switch (this.userIdentity) {
-        case 1:
-          this.$router.push({ path: '/houseKeeping/info' });
-          break;
-        default:
-          this.$router.push({ path: '/order' });
-          break;
-      }
-    },
-  },
+
   created() {
     let self = this;
     // config.userInfo = []; // 初始化数据
@@ -95,10 +63,31 @@ export default {
     // 用户是否为管理员
     // self.registered = true;
     this.GET_USERROLE(self);
-    // this.GET_USERINFO();
-    setTimeout(() => {
-      console.log(this.$store.state.user);
-    }, 100);
+    this.GET_USERINFO();
+  },
+
+  methods: {
+    ...mapMutations(['GET_USERROLE', 'GET_USERINFO']),
+
+    demand(index) {
+      this.isRegistered();
+      if (this.registered) {
+        return alert('需要注册');
+      } else {
+        return this.$router.push({ path: '/order/add' });
+      }
+    },
+
+    // 是否完善资料
+    isRegistered() {
+      if (this.$store.state.user.info !== null) {
+        if (this.$store.state.user.info.user_info.length === 0) {
+          this.registered = true;
+        } else {
+          this.registered = false;
+        }
+      }
+    },
   },
 };
 </script>

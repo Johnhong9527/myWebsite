@@ -85,7 +85,7 @@ router.all('/cros', function(req, res, next) {
       .end(function(req, resq) {
         if (resq.text) {
           // 将数据存入字典中
-          if (dictionary.size() > 100) {
+          if (dictionary.size() > 20) {
             dictionary.clear();
           }
           dictionary.set(url_str, resq.text);
