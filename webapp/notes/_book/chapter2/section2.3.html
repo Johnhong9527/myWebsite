@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Section3.2 · GitBook</title>
+        <title>动画 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="../chapter3/" />
     
-    <link rel="prev" href="section3.1.html" />
+    
+    <link rel="prev" href="section2.2.html" />
     
 
     </head>
@@ -105,7 +107,7 @@
                 <a href="../chapter1/">
             
                     
-                    Chapter1
+                    问题集
             
                 </a>
             
@@ -119,7 +121,7 @@
                 <a href="../chapter1/section1.1.html">
             
                     
-                    Section1.1
+                    gitbook的使用
             
                 </a>
             
@@ -132,7 +134,7 @@
                 <a href="../chapter1/section1.2.html">
             
                     
-                    Section1.2
+                    node
             
                 </a>
             
@@ -145,7 +147,7 @@
                 <a href="../chapter1/section1.3.html">
             
                     
-                    Section1.3
+                    yarn
             
                 </a>
             
@@ -158,7 +160,7 @@
                 <a href="../chapter1/section1.4.html">
             
                     
-                    Section1.4
+                    mongo
             
                 </a>
             
@@ -171,7 +173,7 @@
                 <a href="../chapter1/section1.5.html">
             
                     
-                    Section1.5
+                    docker
             
                 </a>
             
@@ -184,57 +186,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../chapter2/">
-            
-                <a href="../chapter2/">
-            
-                    
-                    Chapter2
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="../chapter2/section2.1.html">
-            
-                <a href="../chapter2/section2.1.html">
-            
-                    
-                    Section2.1
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="../chapter2/section2.2.html">
-            
-                <a href="../chapter2/section2.2.html">
-            
-                    
-                    Section2.2
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="./">
             
                 <a href="./">
             
                     
-                    Chapter3
+                    CSS
             
                 </a>
             
@@ -243,12 +200,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="section3.1.html">
+        <li class="chapter " data-level="1.3.1" data-path="section2.1.html">
             
-                <a href="section3.1.html">
+                <a href="section2.1.html">
             
                     
-                    Section3.1
+                    九宫格
             
                 </a>
             
@@ -256,12 +213,57 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.2" data-path="section3.2.html">
+        <li class="chapter " data-level="1.3.2" data-path="section2.2.html">
             
-                <a href="section3.2.html">
+                <a href="section2.2.html">
             
                     
-                    Section3.2
+                    css_12 等分圆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="section2.3.html">
+            
+                <a href="section2.3.html">
+            
+                    
+                    动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter3/">
+            
+                <a href="../chapter3/">
+            
+                    
+                    VUE
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter3/section3.1.html">
+            
+                <a href="../chapter3/section3.1.html">
+            
+                    
+                    vue换肤
             
                 </a>
             
@@ -304,7 +306,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Section3.2</a>
+        <a href=".." >动画</a>
     </h1>
 </div>
 
@@ -319,7 +321,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="section32">Section3.2</h1>
+                                <h1 id="&#x52A8;&#x753B;">&#x52A8;&#x753B;</h1>
+<h2 id="&#x91CD;&#x590D;&#x6267;&#x884C;&#x52A8;&#x753B;">&#x91CD;&#x590D;&#x6267;&#x884C;&#x52A8;&#x753B;</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;animation&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.animation</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">5</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">2px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">2px</span>;
+  <span class="hljs-attribute">background</span>: red;
+  <span class="hljs-attribute">animation</span>: myfirst <span class="hljs-number">1s</span>;
+  <span class="hljs-attribute">animation-iteration-count</span>: infinite;
+}
+@<span class="hljs-keyword">keyframes</span> myfirst {
+  0% {
+    <span class="hljs-attribute">background</span>: red;
+  }
+  25% {
+    <span class="hljs-attribute">background</span>: yellow;
+  }
+  50% {
+    <span class="hljs-attribute">background</span>: blue;
+  }
+  100% {
+    <span class="hljs-attribute">background</span>: red;
+  }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -347,10 +376,14 @@
 
             
                 
-                <a href="section3.1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Section3.1">
+                <a href="section2.2.html" class="navigation navigation-prev " aria-label="Previous page: css_12 等分圆">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="../chapter3/" class="navigation navigation-next " aria-label="Next page: VUE">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -359,7 +392,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Section3.2","level":"1.4.2","depth":2,"previous":{"title":"Section3.1","level":"1.4.1","depth":2,"path":"chapter3/section3.1.md","ref":"chapter3/section3.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3/section3.2.md","mtime":"2018-03-13T14:34:42.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-21T02:08:53.459Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"动画","level":"1.3.3","depth":2,"next":{"title":"VUE","level":"1.4","depth":1,"path":"chapter3/README.md","ref":"chapter3/README.md","articles":[{"title":"vue换肤","level":"1.4.1","depth":2,"path":"chapter3/section3.1.md","ref":"chapter3/section3.1.md","articles":[]}]},"previous":{"title":"css_12 等分圆","level":"1.3.2","depth":2,"path":"chapter2/section2.2.md","ref":"chapter2/section2.2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/section2.3.md","mtime":"2018-04-13T08:34:22.789Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-13T08:37:36.099Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
