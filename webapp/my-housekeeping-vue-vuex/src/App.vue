@@ -7,10 +7,11 @@
 <script>
 export default {
   name: 'App',
-}
+};
 </script>
 
-<style>
+<style lang="less">
+@import url('./assets/style.less');
 * {
   padding: 0;
   margin: 0;
