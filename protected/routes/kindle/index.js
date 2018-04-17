@@ -97,25 +97,25 @@ router.get('/search', function(req, res, next) {
   let params = URL.parse(req.url, true).query;
   console.log(params);
 
-  request('https://www.boquge.com/search.htm?keyword=' + params.name, function(
-    err,
-    res,
-    body
-  ) {
-    console.log('start')
-    // console.log(body)
-    // console.log(res)
-    // return;
-    let html = iconv.decode(body, 'gb2312');
-    let $ = cheerio.load(html, {
-      decodeEntities: false,
-    });
-    let clearfix = $('.list-group-item.clearfix');
-    console.log(clearfix.eq(5).html());
-    console.log('end');
-  });
+  // request('https://www.boquge.com/search.htm?keyword=' + params.name, function(
+  //   err,
+  //   res,
+  //   body
+  // ) {
+  //   console.log('start')
+  //   // console.log(body)
+  //   // console.log(res)
+  //   // return;
+  //   let html = iconv.decode(body, 'gb2312');
+  //   let $ = cheerio.load(html, {
+  //     decodeEntities: false,
+  //   });
+  //   let clearfix = $('.list-group-item.clearfix');
+  //   console.log(clearfix.eq(5).html());
+  //   console.log('end');
+  // });
 
-  return;
+  // return;
   request
     .get('https://www.boquge.com/search.htm?keyword=' + params.name)
     .charset('UTF-8')
