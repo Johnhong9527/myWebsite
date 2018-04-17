@@ -116,26 +116,26 @@ router.get('/search', function(req, res, next) {
   // });
 
   // return;
-  request
-    .get('https://www.boquge.com/search.htm?keyword=' + params.name)
-    .charset('UTF-8')
-    .end(function(req, resq) {
-      console.log(req);
-      console.log(resq);
-      // if (resq.text) {
-      //   // 将数据存入字典中
-      //   if (dictionary.size() > 50) {
-      //     dictionary.clear();
-      //   }
-      //   dictionary.set(url_str, resq.text);
-      //   resolve(resq.text);
-      // } else {
-      //   reject(false);
-      // }
-    });
+  // request
+  //   .get('https://www.boquge.com/search.htm?keyword=' + params.name)
+  //   .charset('UTF-8')
+  //   .end(function(req, resq) {
+  //     console.log(req);
+  //     console.log(resq);
+  //     // if (resq.text) {
+  //     //   // 将数据存入字典中
+  //     //   if (dictionary.size() > 50) {
+  //     //     dictionary.clear();
+  //     //   }
+  //     //   dictionary.set(url_str, resq.text);
+  //     //   resolve(resq.text);
+  //     // } else {
+  //     //   reject(false);
+  //     // }
+  //   });
 
-  return;
-  _cros(req)
+  // return;
+  _cros(params)
     .then(_res => {
       res.send(_res);
     })
