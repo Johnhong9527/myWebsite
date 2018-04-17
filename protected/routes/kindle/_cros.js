@@ -23,6 +23,8 @@ module.exports = function(url) {
             //   dictionary.clear();
             // }
             // dictionary.set(url_str, resq.text);
+
+            console.log(resq.text);
             resolve(resq.text);
           } else {
             reject('数据请求失败！');
