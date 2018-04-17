@@ -15,6 +15,11 @@ const path = require('path');
 const nodeEmail = require('./_nodemailer');
 // 网络请求
 const _cros = require('./_cros');
+
+// 搜索模块
+const _search = require('./boquge/search');
+ 
+  
 /* 浏览器输入地址（如127.0.0.1:3000/sned）后即发送 */
 router.get('/send', function(req, res, next) {
   let r = res;
@@ -96,7 +101,13 @@ router.get('/search', function(req, res, next) {
   // res.send('ok');
   let params = URL.parse(req.url, true).query;
   console.log(params);
-
+  _search(params).then(sres => {
+    res.json(sres)
+    delete params
+  }).catch(err => {
+    res.json(err);
+    delete params
+  })
   // request('https://www.boquge.com/search.htm?keyword=' + params.name, function(
   //   err,
   //   res,
@@ -135,13 +146,13 @@ router.get('/search', function(req, res, next) {
   //   });
 
   // return;
-  _cros(params)
-    .then(_res => {
-      res.send(_res);
-    })
-    .catch(err => {
-      res.send(err);
-    });
+  // _cros(params)
+  //   .then(_res => {
+  //     res.send(_res);
+  //   })
+  //   .catch(err => {
+  //     res.send(err);
+  //   });
 });
 
 module.exports = router;
