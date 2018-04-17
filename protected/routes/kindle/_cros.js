@@ -3,6 +3,7 @@
 // 网络请求模块
 const request = require('superagent');
 require('superagent-charset')(request);
+
 // var Dictionary = require('./_url');
 // let dictionary = new Dictionary();
 module.exports = function(url) {

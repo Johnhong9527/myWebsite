@@ -1,11 +1,14 @@
 const ajax = require('../_cros');
 // 切割节点模块
 const cheerio = require('cheerio');
+const iconv = require('iconv-lite');
 module.exports = function(p) {
   return new Promise((resolve, reject) => {
     ajax('https://www.boquge.com/search.htm?keyword=' + p.name)
       .then(res => {
         console.log(8);
+        let html = iconv.decode(body, 'gb2312');
+        let $ = cheerio.load(html, { decodeEntities: false });
         let clearfix = $('.list-group-item.clearfix');
         console.log(
           clearfix
