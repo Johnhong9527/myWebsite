@@ -103,9 +103,9 @@ router.get('/search', function(req, res, next) {
     body
   ) {
     console.log('start')
-    console.log(body)
-    console.log(res)
-    return;
+    // console.log(body)
+    // console.log(res)
+    // return;
     let html = iconv.decode(body, 'gb2312');
     let $ = cheerio.load(html, {
       decodeEntities: false,
