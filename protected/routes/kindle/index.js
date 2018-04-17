@@ -103,6 +103,7 @@ router.get('/search', function(req, res, next) {
   console.log(params);
   _search(params).then(sres => {
     res.json(sres)
+    console.log(sres);
   }).catch(err => {
     res.json(err);
   })
