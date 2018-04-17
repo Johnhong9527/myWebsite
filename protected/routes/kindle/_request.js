@@ -1,11 +1,21 @@
 // 网络请求模块
 let originRequest = require('request');
 let headers = {
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'Accept-Encoding': 'gzip, deflate, br',
+  'Accept-Language': 'zh-CN,zh;q=0.9',
+  'Cache-Control': 'max-age=0',
+  'Connection': 'keep-alive',
+  'Cookie': 'M_distinctid=162531f23f473-0ad39a30d650f5-3b7c015b-1fa400-162531f23f5b95; cids_AC2=73088; cids_AC3=31747; CNZZDATA1259606950=482206451-1521811991-%7C1523949373',
+  'DNT': 1,
+  'Host': 'www.boquge.com',
+  'Upgrade-Insecure-Requests': 1,
   'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
 }
 
 // 封装的方法
 function request(url, callback) {
+  return 
   let _callback = callback;
   let options = {
     url: url,
