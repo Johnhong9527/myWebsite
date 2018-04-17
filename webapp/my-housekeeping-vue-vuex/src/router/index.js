@@ -14,8 +14,8 @@ const hEdit = r => require.ensure([], () => r(require("../page/h/children/edit")
 const hIsReg = r => require.ensure([], () => r(require("../page/h/children/isReg")), "hIsReg");
 // 客户
 const order = r => require.ensure([], () => (r = require("../page/order/index.vue")), "order");
-const addOrder = resolve => require(["../page/order/add.vue"], resolve);
-const listOrder = resolve => require(["../page/order/list.vue"], resolve);
+const addOrder = resolve => require(["../page/order/children/add.vue"], resolve);
+const listOrder = resolve => require(["../page/order/children/list.vue"], resolve);
 export default new Router({
   routes: [
     {
