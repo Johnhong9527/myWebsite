@@ -4,15 +4,30 @@ const cheerio = require('cheerio');
 const iconv = require('iconv-lite');
 module.exports = function(p) {
   return new Promise((resolve, reject) => {
+    request('https://www.boquge.com/search.htm?keyword=' + p.name, function(
+      err,
+      res,
+      body
+    ) {
+      console.log('start');
+      let html = iconv.decode(body, 'gb2312');
+      let $ = cheerio.load(html, {
+        decodeEntities: false,
+      });
+      let clearfix = $('.list-group-item.clearfix');
+      console.log(clearfix.eq(5).html());
+      console.log('end');
+    });
+
     ajax('https://www.boquge.com/search.htm?keyword=' + p.name)
       .then(res => {
         console.log(8);
 
         var converterStream = iconv.decodeStream('gb2312');
         res.pipe(converterStream);
-    
+
         converterStream.on('data', function(str) {
-            console.log(str); // Do something with decoded strings, chunk-by-chunk.
+          console.log(str); // Do something with decoded strings, chunk-by-chunk.
         });
 
         // let html = iconv.decode(res, 'gb2312');
