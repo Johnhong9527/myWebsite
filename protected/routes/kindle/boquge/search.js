@@ -15,15 +15,15 @@ module.exports = function(p) {
             console.log(str); // Do something with decoded strings, chunk-by-chunk.
         });
 
-        let html = iconv.decode(res, 'gb2312');
-        let $ = cheerio.load(html, { decodeEntities: false });
-        let clearfix = $('.list-group-item.clearfix');
-        console.log(
-          clearfix
-            .eq(5)
-            .children('.col-xs-1 .tag-blue')
-            .html()
-        );
+        // let html = iconv.decode(res, 'gb2312');
+        // let $ = cheerio.load(html, { decodeEntities: false });
+        // let clearfix = $('.list-group-item.clearfix');
+        // console.log(
+        //   clearfix
+        //     .eq(5)
+        //     .children('.col-xs-1 .tag-blue')
+        //     .html()
+        // );
         // let resultList = $('div.result-game-item-detail');
         resolve('ok');
       })
