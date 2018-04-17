@@ -6,9 +6,6 @@
         <img :src="banner" alt="">
       </div>
       <!--套餐图-->
-      <!-- <router-link to='/order/add'>
-      /order/add
-      </router-link> -->
       <div class="home">
         <img class="m_b_5" :src="yuesao" alt="" @click='demand(1)'>
         <img class="m_b_5" src="http://odulvej8l.bkt.clouddn.com/2018-01-08-3.jpg" alt="">
@@ -82,9 +79,9 @@ export default {
     isRegistered() {
       if (this.$store.state.user.info !== null) {
         if (this.$store.state.user.info.user_info.length === 0) {
-          this.registered = true;
+          return (this.registered = true);
         } else {
-          this.registered = false;
+          return (this.registered = false);
         }
       }
     },

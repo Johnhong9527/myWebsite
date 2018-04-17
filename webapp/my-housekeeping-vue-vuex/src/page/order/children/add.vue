@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h1>
-      addOrder
-    </h1>
+    <x-header/>
+    <h2>
+      add order
+    </h2>
   </div>
 </template>
 <script>

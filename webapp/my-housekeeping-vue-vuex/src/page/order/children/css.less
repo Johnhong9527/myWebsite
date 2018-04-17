@@ -1,0 +1,88 @@
+.circle {
+  width: 100vw;
+  height: 100vw;
+
+  .pie {
+    width: 50vw;
+    height: 50vw;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    .pie_view {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      &:nth-child(1) {
+        transform: rotate(0deg);
+        background-color: rgb(209, 32, 32);
+      }
+      &:nth-child(2) {
+        transform: rotate(30deg);
+        background-color: rgb(10, 250, 150);
+      }
+      &:nth-child(3) {
+        transform: rotate(60deg);
+        background-color: rgb(11, 23, 197);
+      }
+      & > view {
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        background-color: rgb(129, 20, 202);
+      }
+    }
+    &:nth-child(1) {
+      background-color: aqua;
+      .pie_view {
+        border-top-left-radius: 100%;
+        transform-origin: bottom right;
+        & > view {
+          bottom: 0;
+          right: 0;
+          border-top-left-radius: 100%;
+          transform-origin: bottom right;
+          background-color: rgb(203, 192, 211);
+        }
+      }
+    }
+    &:nth-child(2) {
+      background-color: rgb(255, 230, 0);
+      .pie_view {
+        border-top-right-radius: 100%;
+        transform-origin: bottom left;
+        & > view {
+          bottom: 0;
+          left: 0;
+          border-top-right-radius: 100%;
+          transform-origin: bottom left;
+        }
+      }
+    }
+    &:nth-child(3) {
+      background-color: rgb(197, 22, 168);
+      .pie_view {
+        border-bottom-left-radius: 100%;
+        transform-origin: top right;
+        & > view {
+          top: 0;
+          right: 0;
+          border-bottom-left-radius: 100%;
+          transform-origin: top right;
+        }
+      }
+    }
+    &:nth-child(4) {
+      background-color: rgb(37, 185, 136);
+      .pie_view {
+        border-bottom-right-radius: 100%;
+        transform-origin: top left;
+        & > view {
+          top: 0;
+          left: 0;
+          border-bottom-right-radius: 100%;
+          transform-origin: top left;
+        }
+      }
+    }
+  }
+}
