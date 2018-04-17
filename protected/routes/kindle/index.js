@@ -103,10 +103,8 @@ router.get('/search', function(req, res, next) {
   console.log(params);
   _search(params).then(sres => {
     res.json(sres)
-    delete params
   }).catch(err => {
     res.json(err);
-    delete params
   })
   // request('https://www.boquge.com/search.htm?keyword=' + params.name, function(
   //   err,
