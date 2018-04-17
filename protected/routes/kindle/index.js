@@ -102,10 +102,12 @@ router.get('/search', function(req, res, next) {
   let params = URL.parse(req.url, true).query;
   console.log(params);
   _search(params).then(sres => {
-    res.json(sres)
+    res.send(sres)
+    console.log(106)
     console.log(sres);
   }).catch(err => {
-    res.json(err);
+    console.log(109)
+    res.send(err);
   })
   // request('https://www.boquge.com/search.htm?keyword=' + params.name, function(
   //   err,
