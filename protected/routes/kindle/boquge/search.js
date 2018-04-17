@@ -1,13 +1,18 @@
 const ajax = require('../_cros');
 // 切割节点模块
 const cheerio = require('cheerio');
-module.exports = function (url) {
+module.exports = function(p) {
   return new Promise((resolve, reject) => {
-    ajax(url)
+    ajax('https://www.boquge.com/search.htm?keyword=' + p.name)
       .then(res => {
-        console.log(8)
+        console.log(8);
         let clearfix = $('.list-group-item.clearfix');
-        console.log(clearfix.eq(5).chilerd('.col-xs-1 .tag-blue').text());
+        console.log(
+          clearfix
+            .eq(5)
+            .chilerd('.col-xs-1 .tag-blue')
+            .text()
+        );
         // let resultList = $('div.result-game-item-detail');
         resolve('ok');
       })
