@@ -13,8 +13,8 @@ module.exports = function(p) {
         console.log(
           clearfix
             .eq(5)
-            .chilerd('.col-xs-1 .tag-blue')
-            .text()
+            .children('.col-xs-1 .tag-blue')
+            .html()
         );
         // let resultList = $('div.result-game-item-detail');
         resolve('ok');
