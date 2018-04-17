@@ -7,7 +7,7 @@ module.exports = function(p) {
     ajax('https://www.boquge.com/search.htm?keyword=' + p.name)
       .then(res => {
         console.log(8);
-        let html = iconv.decode(body, 'gb2312');
+        let html = iconv.decode(res, 'gb2312');
         let $ = cheerio.load(html, { decodeEntities: false });
         let clearfix = $('.list-group-item.clearfix');
         console.log(
