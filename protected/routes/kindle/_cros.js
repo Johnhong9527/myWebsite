@@ -16,7 +16,7 @@ module.exports = function(url) {
         .charset('UTF-8')
         .end(function(req, resq) {
           // console.log(req);
-          console.log(resq);
+          // console.log(resq);
           if (resq.text) {
             // 将数据存入字典中
             // if (dictionary.size() > 50) {
