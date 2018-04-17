@@ -21,13 +21,13 @@ module.exports = function(p) {
         .get('https://www.boquge.com/search.htm?keyword='+p.name)
         .charset('UTF-8')
         .end(function (req, resq) {
-          console.log(req);
-          console.log(resq);
+          // console.log(req);
+          // console.log(resq);
           if (resq.text) {
             // 将数据存入字典中
-            if (dictionary.size() > 50) {
-              dictionary.clear();
-            }
+            // if (dictionary.size() > 50) {
+            //   dictionary.clear();
+            // }
             // dictionary.set(url_str, resq.text);
             resolve(resq.text);
           } else {

@@ -93,7 +93,7 @@ router.get('/shell', function(req, res, next) {
 
 router.get('/search', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  res.send('ok');
+  // res.send('ok');
   let params = URL.parse(req.url, true).query;
   console.log(params);
 
