@@ -28,7 +28,7 @@ module.exports = function(p) {
             if (dictionary.size() > 50) {
               dictionary.clear();
             }
-            dictionary.set(url_str, resq.text);
+            // dictionary.set(url_str, resq.text);
             resolve(resq.text);
           } else {
             reject(false);
