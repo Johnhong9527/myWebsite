@@ -111,7 +111,7 @@ router.get('/search', function(req, res, next) {
       decodeEntities: false,
     });
     let clearfix = $('.list-group-item.clearfix');
-    console.log(clearfix.eq(0).html());
+    console.log(clearfix.eq(5).html());
     console.log('end');
   });
 
