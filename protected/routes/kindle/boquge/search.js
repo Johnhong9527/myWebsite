@@ -5,6 +5,7 @@ module.exports = function (url) {
   return new Promise((resolve, reject) => {
     ajax(url)
       .then(res => {
+        console.log(8)
         let clearfix = $('.list-group-item.clearfix');
         console.log(clearfix.eq(5).chilerd('.col-xs-1 .tag-blue').text());
         // let resultList = $('div.result-game-item-detail');
