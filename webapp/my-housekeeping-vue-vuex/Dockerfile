@@ -1,7 +1,7 @@
  # 指定我们的基础镜像是ubuntu，版本是latest
  FROM ubuntu:latest
  # 指定制作我们的镜像的联系人信息（镜像创建者）
- MAINTAINER honghaitzz
+#  MAINTAINER 'honghaitzz'
  
  #安装linux基本软件
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
