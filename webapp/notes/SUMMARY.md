@@ -7,6 +7,7 @@
     * [yarn](chapter1/section1.3.md)
     * [mongo](chapter1/section1.4.md)
     * [docker](chapter1/section1.5.md)
+    * [git](chapter1/section1.6.md)
 * [CSS](chapter2/README.md)
     * [九宫格](chapter2/section2.1.md)
     * [css_12 等分圆](chapter2/section2.2.md)
