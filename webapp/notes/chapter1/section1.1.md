@@ -13,4 +13,14 @@ $ gitbook serve
 # 建立静态网站
 $ gitbook build
 ```
-## 
+
+```:book.json
+{
+  "plugins": ["codeblock-filename", "disqus"],
+  "pluginsConfig": {
+    "disqus": {
+      "shortName": "blog-honghaitao-net"
+    }
+  }
+}
+```
