@@ -13,9 +13,7 @@ $ gitbook serve
 # 建立静态网站
 $ gitbook build
 ```
-<<<<<<< HEAD
-## 
-=======
+
 
 ```:book.json
 {
@@ -27,4 +25,3 @@ $ gitbook build
   }
 }
 ```
->>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a

@@ -1,9 +1,7 @@
 // 网络请求模块
 let originRequest = require('request');
 let headers = {
-<<<<<<< HEAD
-  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36'
-=======
+
   // 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   // 'Accept-Encoding': 'gzip, deflate, br',
   // 'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -14,7 +12,6 @@ let headers = {
   // 'Host': 'www.boquge.com',
   // 'Upgrade-Insecure-Requests': 1,
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
->>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
 }
 
 // 封装的方法
