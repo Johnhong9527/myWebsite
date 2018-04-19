@@ -18,10 +18,17 @@ const _cros = require('./_cros');
 
 // 搜索模块
 const _search = require('./boquge/search');
+<<<<<<< HEAD
  
   
 /* 浏览器输入地址（如127.0.0.1:3000/sned）后即发送 */
 router.get('/send', function(req, res, next) {
+=======
+
+
+/* 浏览器输入地址（如127.0.0.1:3000/sned）后即发送 */
+router.get('/send', function (req, res, next) {
+>>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
   let r = res;
   // r.render('index', { title: 132 });
   nodeEmail({
@@ -30,11 +37,19 @@ router.get('/send', function(req, res, next) {
   })
     .then(_res => {
       // console.log(_res);
+<<<<<<< HEAD
       r.render('index', { title: '已接收：' + _res.accepted });
     })
     .catch(_err => {
       // console.log(_err);
       r.render('index', { title: _err });
+=======
+      r.render('index', {title: '已接收：' + _res.accepted});
+    })
+    .catch(_err => {
+      // console.log(_err);
+      r.render('index', {title: _err});
+>>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
     });
 });
 
@@ -49,14 +64,22 @@ let toc = require('./toc');
 let books = [],
   booksUrl = [];
 /* GET home page. */
+<<<<<<< HEAD
 router.get('/', function(req, res, next) {
+=======
+router.get('/', function (req, res, next) {
+>>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
   let _res = res;
   res.send('ok');
   res.sendFile(path.join(__dirname + 'kindle/index.html'));
   return;
   let url = 'https://www.boquge.com/book/73088';
   let contents = [];
+<<<<<<< HEAD
   request(url, function(err, res, body) {
+=======
+  request(url, function (err, res, body) {
+>>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
     let html = iconv.decode(body, 'gb2312');
     let $ = cheerio.load(html, {
       decodeEntities: false,
@@ -76,11 +99,19 @@ router.get('/', function(req, res, next) {
             .html()
             .split(' ')[1],
           url:
+<<<<<<< HEAD
             'https://www.boquge.com' +
             $li_list
               .eq(i)
               .children('a')
               .attr('href'),
+=======
+          'https://www.boquge.com' +
+          $li_list
+            .eq(i)
+            .children('a')
+            .attr('href'),
+>>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
           id: j++,
         });
       }
@@ -92,6 +123,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
+<<<<<<< HEAD
 router.get('/shell', function(req, res, next) {
   res.send('123');
 });
@@ -107,6 +139,21 @@ router.get('/search', function(req, res, next) {
     console.log(sres);
   }).catch(err => {
     console.log(109)
+=======
+router.get('/shell', function (req, res, next) {
+  res.send('123');
+});
+
+router.get('/search', function (req, res, next) {
+  // res.header('Access-Control-Allow-Origin', '*');
+  // res.send('ok');
+  let params = URL.parse(req.url, true).query;
+  console.log(params.name);
+  _search(params.name).then(sres => {
+    res.send(sres)
+    // console.log(sres);
+  }).catch(err => {
+>>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
     res.send(err);
   })
   // request('https://www.boquge.com/search.htm?keyword=' + params.name, function(
