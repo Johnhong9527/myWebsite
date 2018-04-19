@@ -4,17 +4,11 @@ const router = express.Router();
 const request = require('superagent');
 require('superagent-charset')(request);
 
-<<<<<<< HEAD
-var userInfo = require('../util/userInfo');
-var findUser = require('../util/findUser');
-var Dictionary = require('./url');
-let dictionary = new Dictionary();
-=======
+
 const userInfo = require('../util/userInfo');
 const findUser = require('../util/findUser');
 const Dictionary = require('./url');
 const dictionary = new Dictionary();
->>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
 // 全局变量
 let _old = {};
 let old_url = '';

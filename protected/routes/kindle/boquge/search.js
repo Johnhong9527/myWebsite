@@ -1,23 +1,6 @@
 const ajax = require('../_cros');
 // 切割节点模块
-<<<<<<< HEAD
-const cheerio = require('cheerio');
-const iconv = require('iconv-lite');
-module.exports = function(p) {
-  return new Promise((resolve, reject) => {
-    ajax('https://www.boquge.com/search.htm?keyword=' + p.name)
-      .then(res => {
-        console.log(8);
-        let html = iconv.decode(res, 'gb2312');
-        let $ = cheerio.load(html, { decodeEntities: false });
-        let clearfix = $('.list-group-item.clearfix');
-        console.log(
-          clearfix
-            .eq(5)
-            .children('.col-xs-1 .tag-blue')
-            .html()
-        );
-=======
+
 // 自定义全局方法
 let request = require('../_request');
 const cheerio = require('cheerio');
@@ -92,17 +75,12 @@ module.exports = function (name) {
         //     .children('.col-xs-1 .tag-blue')
         //     .html()
         // );
->>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
         // let resultList = $('div.result-game-item-detail');
         resolve('ok');
       })
       .catch(err => {
         reject(err);
-<<<<<<< HEAD
-      });
-=======
       });*/
->>>>>>> 592ba159dbde0854ca73ff2c6e09202945ecb28a
   });
 };
 /*
