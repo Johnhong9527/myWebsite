@@ -9,6 +9,9 @@
   "author": "seam",
   "license": "ISC",
   "dependencies": {
-    "gitbook-plugin-codeblock-filename": "0.0.9"
+    "gitbook-plugin-codeblock-filename": "0.0.9",
+    "gitbook-plugin-flowchart": "^1.1.0",
+    "gitbook-plugin-sequence": "^0.1.1",
+    "gitbook-plugin-toggle-chapters": "0.0.3"
   }
 }
