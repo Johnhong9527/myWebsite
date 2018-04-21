@@ -14,3 +14,7 @@ yarn.lock
 *.ntvs*
 *.njsproj
 *.sln
+
+
+webapp/my-housekeeping-vue-vuex/yarn.lock
+webapp/node_vue_read/package-lock.json
