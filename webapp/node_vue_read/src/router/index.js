@@ -1,9 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import App from '@/App';
+
 Vue.use(Router);
 // 首页
 const home = r => require.ensure([], () => r(require('../page/home')), 'home');
+const search = r => require.ensure([], () => r(require('../page/search')), 'search');
 export default new Router({
   routes: [
     {
@@ -21,6 +23,11 @@ export default new Router({
           path: '/home',
           component: home,
         },
+        // 搜索
+        {
+          path: '/search',
+          component: search
+        }
       ],
     },
   ],

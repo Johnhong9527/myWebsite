@@ -18,10 +18,7 @@ module.exports = function (name) {
           decodeEntities: false,
         });
         let clearfix = $('.clearfix');
-        // console.log(clearfix.length);
         let _length = clearfix.length > 20 ? 20 : clearfix.length;
-        // console.log(_length);
-        console.log(clearfix.eq(7).children('.col-xs-1').children('.tag-blue').html())
         for (let i = 1; i < _length; i++) {
           novelList.push({
             // 类型: types
@@ -37,9 +34,7 @@ module.exports = function (name) {
             // 更新时间:update_time
             'update_time': clearfix.eq(i).children('.col-xs-2').eq(1).children('.time').html()
           })
-          // console.log(clearfix.eq(i).children('.col-xs-3').children('a').html());
         }
-        // console.log(novelList);
         /*// 类型: types
         console.log(clearfix.eq(5).children('.col-xs-1').children('.tag-blue').children('i').html());
         // 小说名称:novel
