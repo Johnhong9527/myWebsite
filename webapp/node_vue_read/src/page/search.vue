@@ -33,7 +33,9 @@
               </el-button>
               <el-button type="primary" size="mini" class="button button_no_margin_left">下载</el-button>
               <el-button type="primary" size="mini" class="button button_no_margin_left"
-                         @click="GET_BOOK_LIST(item.novel_list)">目录
+                         @click="bookList(item.novel_list)">目录
+                <!--@click="GET_BOOK_LIST(item.novel_list)">-->
+                <!--<router-link :to="{ path: 'list' }">目录</router-link>-->
               </el-button>
               <el-button type="primary" size="mini" class="button button_no_margin_left">发送到kindle</el-button>
             </div>
@@ -78,6 +80,11 @@
         if (this.name != '') {
           console.log(this.name)
         }
+      },
+      bookList(url) {
+        let self = this;
+        self.url = url
+        this.GET_BOOK_LIST(self);
       },
       reader(url) {
         // let url = 'https://www.boquge.com/xs/80199/index.html';
@@ -150,6 +157,12 @@
     display: flex;
     button {
       margin: 5px;
+      a {
+        text-decoration: none;
+        &:active, &:hover, &:visited, &:hover {
+          color: white;
+        }
+      }
     }
   }
   

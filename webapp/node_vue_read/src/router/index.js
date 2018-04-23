@@ -6,6 +6,7 @@ Vue.use(Router);
 // 首页
 const home = r => require.ensure([], () => r(require('../page/home')), 'home');
 const search = r => require.ensure([], () => r(require('../page/search')), 'search');
+const list = r => require.ensure([], () => r(require('../page/list')), 'list');
 export default new Router({
   routes: [
     {
@@ -16,7 +17,7 @@ export default new Router({
         // 地址为空时跳转home页面
         {
           path: '',
-          redirect: '/home',
+          redirect: '/search',
         },
         // 首页
         {
@@ -27,6 +28,11 @@ export default new Router({
         {
           path: '/search',
           component: search
+        },
+        // 列表
+        {
+          path: '/list',
+          component: list
         }
       ],
     },

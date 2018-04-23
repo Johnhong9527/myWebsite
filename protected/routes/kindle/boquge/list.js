@@ -8,10 +8,12 @@ module.exports = function (url) {
         let _length = chapters_list.length > 20 ? 20 : chapters_list.length;
         let novelList = [];
         for (let i = 0; i < _length; i++) {
-          novelList.push({
-            'title': chapters_list.eq(i).children('a').html(),
-            'title_url': 'https://www.boquge.com' + chapters_list.children('a').attr('href')
-          })
+          if (chapters_list.eq(i).children('a').html()) {
+            novelList.push({
+              'title': chapters_list.eq(i).children('a').html(),
+              'title_url': 'https://www.boquge.com' + chapters_list.children('a').attr('href')
+            })
+          }
         }
         resolve(novelList)
       } else {
