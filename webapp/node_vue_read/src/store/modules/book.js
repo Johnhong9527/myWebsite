@@ -6,7 +6,8 @@ import {Loading} from 'element-ui';
 const GET_BOOK_LIST = "GET_BOOK_LIST"; // 搜素列表
 // state
 const state = {
-  list: {}
+  list: {},
+  info: {}
 };
 
 // getters
@@ -21,11 +22,12 @@ const mutations = {
     let loading = Loading.service({
       lock: true,
       text: '加载中',
-      spinner: 'el-icon-loading',
+      // spinner: 'el-icon-loading',
       background: 'rgba(0, 0, 0, 0.7)'
     });
-    getBookList(self.url).then(res => {
+    getBookList(self.book.novel_list).then(res => {
       state.list = res.data;
+      state.info = self.book;
       self.$router.push({path: '/list'});
       loading.close();
       // self = null

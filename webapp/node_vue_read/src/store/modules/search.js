@@ -5,7 +5,8 @@ import config from "@/config/config";
 const GET_SEARCH_LIST = "GET_SEARCH_LIST"; // 搜素列表
 // state
 const state = {
-  list: {}
+  list: {},
+  search_name: ''
 };
 
 // getters
@@ -18,10 +19,10 @@ const actions = {};
 const mutations = {
   GET_SEARCH_LIST(state, name) {
     getSearchList(name).then(res => {
+      state.search_name = name
       state.list = res.data;
     });
-  },
-
+  }
 };
 
 export default {

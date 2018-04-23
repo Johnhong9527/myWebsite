@@ -18,11 +18,11 @@
               小说：{{item.novel}}
             </div>
             <div class="text">
-              <!--最新：<a :href="item.chapter_url">{{item.chapter}}</a>-->
-              最新：{{item.chapter}}
+              作者：{{item.author}}
             </div>
             <div class="text">
-              作者：{{item.author}}
+              <!--最新：<a :href="item.chapter_url">{{item.chapter}}</a>-->
+              最新：{{item.chapter}}
             </div>
             <div class="text">
               更新：{{item.update_time}}
@@ -33,7 +33,7 @@
               </el-button>
               <el-button type="primary" size="mini" class="button button_no_margin_left">下载</el-button>
               <el-button type="primary" size="mini" class="button button_no_margin_left"
-                         @click="bookList(item.novel_list)">目录
+                         @click="bookList(item)">目录
                 <!--@click="GET_BOOK_LIST(item.novel_list)">-->
                 <!--<router-link :to="{ path: 'list' }">目录</router-link>-->
               </el-button>
@@ -74,6 +74,9 @@
         name: ''
       }
     },
+    created() {
+      this.name = this.search_name
+    },
     methods: {
       ...mapMutations(['GET_SEARCH_LIST', 'GET_BOOK_LIST']),
       search() {
@@ -81,9 +84,9 @@
           console.log(this.name)
         }
       },
-      bookList(url) {
+      bookList(item) {
         let self = this;
-        self.url = url
+        self.book = item
         this.GET_BOOK_LIST(self);
       },
       reader(url) {
@@ -100,7 +103,8 @@
     },
     computed: {
       ...mapState({
-        list: state => state.search.list
+        list: state => state.search.list,
+        search_name: state => state.search.search_name
       })
     }
   }
