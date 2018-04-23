@@ -22,6 +22,16 @@ export function getBookList(url) {
   })
 }
 
+export function getDown(url) {
+  return new Promise((resolve, reject) => {
+    axios.get(config.apiPath() + "kindle/down", {
+      params: {
+        url: url
+      }
+    }).then(res => resolve(res)).catch(err => reject(err))
+  })
+}
+
 // 获取用户角色
 // export function getUserRole(userId) {
 //   return new Promise((resolve, reject) => {

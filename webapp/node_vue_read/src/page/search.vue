@@ -9,7 +9,7 @@
           <el-button slot="append" icon="el-icon-search" @click="GET_SEARCH_LIST(name)"></el-button>
         </el-input>
       </el-row>
-      
+
       <el-row class="items_list">
         <div v-for="(item,index) in list" :key="index">
           <el-card :body-style="{ padding: '10px' }">
@@ -31,7 +31,8 @@
               <el-button type="primary" size="mini" class="button button_no_margin_left"
                          @click="reader(item.novel_url)">阅读
               </el-button>
-              <el-button type="primary" size="mini" class="button button_no_margin_left">下载</el-button>
+              <el-button type="primary" size="mini" class="button button_no_margin_left" @click="down(item)">下载
+              </el-button>
               <el-button type="primary" size="mini" class="button button_no_margin_left"
                          @click="bookList(item)">目录
                 <!--@click="GET_BOOK_LIST(item.novel_list)">-->
@@ -43,7 +44,7 @@
           </el-card>
         </div>
       </el-row>
-      
+
       <!--<el-row class="items_list">
         <el-col :span="5" v-for="(o, index) in 20" :key="o">
           <el-card :data-index="index" :body-style="{ padding: '0px' }">
@@ -59,14 +60,14 @@
           </el-card>
         </el-col>
       </el-row>-->
-    
+
     </el-main>
   </el-container>
 </template>
 
 <script>
   import {mapState, mapMutations} from 'vuex'
-  
+
   export default {
     name: "search",
     data() {
@@ -78,11 +79,16 @@
       this.name = this.search_name
     },
     methods: {
-      ...mapMutations(['GET_SEARCH_LIST', 'GET_BOOK_LIST']),
+      ...mapMutations(['GET_SEARCH_LIST', 'GET_BOOK_LIST', 'GET_BOOK_DOWN']),
       search() {
         if (this.name != '') {
           console.log(this.name)
         }
+      },
+      down(item) {
+        console.log(item.novel_list);
+        this.GET_BOOK_DOWN(item.novel_list)
+        // self.book.novel_list
       },
       bookList(item) {
         let self = this;
@@ -117,7 +123,7 @@
       margin-bottom: 0;
     }
   }
-  
+
   .items_list {
     display: flex;
     flex-wrap: wrap;
@@ -139,16 +145,16 @@
       }
     }
   }
-  
+
   .image {
     width: 100%;
     display: block;
   }
-  
+
   .el-button--mini, .el-button--mini.is-round {
     padding: 7px 10px;
   }
-  
+
   .clearfix {
     margin-top: 10px;
     text-align: center;
@@ -169,7 +175,7 @@
       }
     }
   }
-  
+
   .el-tag {
     /*bottom: 5px;*/
     /*left: 5px;*/

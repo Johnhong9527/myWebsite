@@ -12,7 +12,7 @@ module.exports = function (url) {
           if (chapters_list.eq(i).children('a').html()) {
             novelList.push({
               'title': chapters_list.eq(i).children('a').html(),
-              'title_url': 'https://www.boquge.com' + chapters_list.children('a').attr('href')
+              'title_url': 'https://www.boquge.com' + chapters_list.eq(i).children('a').attr('href')
             })
           }
         }
