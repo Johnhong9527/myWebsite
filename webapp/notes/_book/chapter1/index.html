@@ -17,6 +17,14 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -127,6 +135,44 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="1/">
+            
+                <a href="1/">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="1/section1.html">
+            
+                <a href="1/section1.html">
+            
+                    
+                    flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.2.2" data-path="section1.2.html">
@@ -174,6 +220,19 @@
             
                     
                     docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="section1.6.html">
+            
+                <a href="section1.6.html">
+            
+                    
+                    git
             
                 </a>
             
@@ -324,7 +383,30 @@
                                 <h1 id="&#x95EE;&#x9898;&#x96C6;">&#x95EE;&#x9898;&#x96C6;</h1>
 <p>&#x672C;&#x76EE;&#x5F55;&#x6536;&#x96C6;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x671F;&#x95F4;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x53CA;&#x89E3;&#x51B3;&#x65B9;&#x6848;</p>
 <p><a href="http://blog.csdn.net/ajianyingxiaoqinghan/article/details/78910182" target="_blank">sublime&#x4E2D;&#x6587;&#x8F93;&#x5165;&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></p>
+<h1 id="gitbookplugin">GITBOOK_PLUGIN</h1>
+<p><a href="https://plugins.gitbook.com/plugin" target="_blank">gitbook&#x63D2;&#x4EF6;&#x5217;&#x8868;</a>
+<a href="https://blog.csdn.net/zhangjk1993/article/details/50380403" target="_blank">gitbook&#x63D2;&#x4EF6;</a></p>
+<div><p class="code-filename">sequence</p></div>
+<pre><code>    Title: Here is a title
+    A-&gt;B: Normal line
+    B--&gt;C: Dashed line
+    C-&gt;&gt;D: Open arrow
+    D--&gt;&gt;A: Dashed open arrow
+</code></pre><pre><code>{% sequence %}
+Alice-&gt;Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob--&gt;Alice: I am good thanks!
+{% endsequence %}
+</code></pre><p>Inline math: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>&#x222B;</mo><mrow><mo>&#x2212;</mo><mi mathvariant="normal">&#x221E;</mi></mrow><mi mathvariant="normal">&#x221E;</mi></msubsup><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^\infty g(x) dx</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.805em;"></span><span class="strut bottom" style="height:1.219451em;vertical-align:-0.414451em;"></span><span class="base textstyle uncramped"><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;top:-0.0005599999999999772em;">&#x222B;</span><span class="msupsub"><span class="vlist"><span style="top:0.35612em;margin-left:-0.19445em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mtight">&#x2212;</span><span class="mord mathrm mtight">&#x221E;</span></span></span></span><span style="top:-0.41900000000000004em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">&#x221E;</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mord mathit">d</span><span class="mord mathit">x</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>b</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex"> b^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">b</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">3</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></p>
+<p>Block math:</p>
+<pre><code>&#x222B;&#x2212;&#x221E;&#x221E;g(x)dx
+\int_{-\infty}^\infty g(x) dx
+&#x222B;&#x200B;&#x2212;&#x221E;&#x200B;&#x221E;&#x200B;&#x200B;g(x)dx
+</code></pre><pre><code>Or using the templating syntax:
 
+{% math %}\int_{-\infty}^\infty g(x) dx{% endblock %}
+</code></pre>
                                 
                                 </section>
                             
@@ -367,7 +449,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"问题集","level":"1.2","depth":1,"next":{"title":"gitbook的使用","level":"1.2.1","depth":2,"path":"chapter1/section1.1.md","ref":"chapter1/section1.1.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/README.md","mtime":"2018-03-13T14:34:42.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-13T08:37:36.099Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"问题集","level":"1.2","depth":1,"next":{"title":"gitbook的使用","level":"1.2.1","depth":2,"path":"chapter1/section1.1.md","ref":"chapter1/section1.1.md","articles":[{"title":"插件","level":"1.2.1.1","depth":3,"path":"chapter1/1/README.md","ref":"chapter1/1/README.md","articles":[{"title":"flow","level":"1.2.1.1.1","depth":4,"path":"chapter1/1/section1.md","ref":"chapter1/1/section1.md","articles":[]}]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["codeblock-filename","flowchart","sequence","katex"],"pluginsConfig":{"sequence":{"theme":"simple"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"flowchart":{"line-color":"black"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/README.md","mtime":"2018-04-23T02:18:18.247Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-23T02:20:31.488Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -375,10 +457,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

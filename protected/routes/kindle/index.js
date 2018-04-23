@@ -18,10 +18,11 @@ const _cros = require('./_cros');
 
 // 搜索模块
 const _search = require('./boquge/search');
- 
-  
+const _list = require('./boquge/list');
+
+
 /* 浏览器输入地址（如127.0.0.1:3000/sned）后即发送 */
-router.get('/send', function(req, res, next) {
+router.get('/send', function (req, res, next) {
   let r = res;
   // r.render('index', { title: 132 });
   nodeEmail({
@@ -30,11 +31,12 @@ router.get('/send', function(req, res, next) {
   })
     .then(_res => {
       // console.log(_res);
-      r.render('index', { title: '已接收：' + _res.accepted });
+      
+      r.render('index', {title: '已接收：' + _res.accepted});
     })
     .catch(_err => {
       // console.log(_err);
-      r.render('index', { title: _err });
+      r.render('index', {title: _err});
     });
 });
 
@@ -49,14 +51,16 @@ let toc = require('./toc');
 let books = [],
   booksUrl = [];
 /* GET home page. */
-router.get('/', function(req, res, next) {
+
+router.get('/', function (req, res, next) {
+  
   let _res = res;
   res.send('ok');
   res.sendFile(path.join(__dirname + 'kindle/index.html'));
   return;
   let url = 'https://www.boquge.com/book/73088';
   let contents = [];
-  request(url, function(err, res, body) {
+  request(url, function (err, res, body) {
     let html = iconv.decode(body, 'gb2312');
     let $ = cheerio.load(html, {
       decodeEntities: false,
@@ -76,11 +80,11 @@ router.get('/', function(req, res, next) {
             .html()
             .split(' ')[1],
           url:
-            'https://www.boquge.com' +
-            $li_list
-              .eq(i)
-              .children('a')
-              .attr('href'),
+          'https://www.boquge.com' +
+          $li_list
+            .eq(i)
+            .children('a')
+            .attr('href'),
           id: j++,
         });
       }
@@ -92,21 +96,25 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/shell', function(req, res, next) {
+router.get('/shell', function (req, res, next) {
   res.send('123');
 });
 
-router.get('/search', function(req, res, next) {
+router.get('/list', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  // res.send('ok');
   let params = URL.parse(req.url, true).query;
-  console.log(params);
-  _search(params).then(sres => {
+  _list(params.url).then(sres => {
     res.send(sres)
-    console.log(106)
-    console.log(sres);
   }).catch(err => {
-    console.log(109)
+    res.send(err)
+  })
+})
+router.get('/search', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  let params = URL.parse(req.url, true).query;
+  _search(params.name).then(sres => {
+    res.send(sres)
+  }).catch(err => {
     res.send(err);
   })
   // request('https://www.boquge.com/search.htm?keyword=' + params.name, function(
@@ -126,7 +134,7 @@ router.get('/search', function(req, res, next) {
   //   console.log(clearfix.eq(5).html());
   //   console.log('end');
   // });
-
+  
   // return;
   // request
   //   .get('https://www.boquge.com/search.htm?keyword=' + params.name)
@@ -145,7 +153,7 @@ router.get('/search', function(req, res, next) {
   //     //   reject(false);
   //     // }
   //   });
-
+  
   // return;
   // _cros(params)
   //   .then(_res => {

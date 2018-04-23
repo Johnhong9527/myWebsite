@@ -17,6 +17,14 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -57,7 +65,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="section1.2.html" />
+    <link rel="next" href="1/" />
     
     
     <link rel="prev" href="./" />
@@ -127,6 +135,44 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="1/">
+            
+                <a href="1/">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="1/section1.html">
+            
+                <a href="1/section1.html">
+            
+                    
+                    flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.2.2" data-path="section1.2.html">
@@ -174,6 +220,19 @@
             
                     
                     docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="section1.6.html">
+            
+                <a href="section1.6.html">
+            
+                    
+                    git
             
                 </a>
             
@@ -334,8 +393,16 @@ $ gitbook serve
 <span class="hljs-comment"># &#x5EFA;&#x7ACB;&#x9759;&#x6001;&#x7F51;&#x7AD9;</span>
 $ gitbook build
 </code></pre>
-<h2 id=""> </h2>
-
+<div><p class="code-filename">book.json</p></div>
+<pre><code>{
+  &quot;plugins&quot;: [&quot;codeblock-filename&quot;, &quot;disqus&quot;],
+  &quot;pluginsConfig&quot;: {
+    &quot;disqus&quot;: {
+      &quot;shortName&quot;: &quot;blog-honghaitao-net&quot;
+    }
+  }
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -367,7 +434,7 @@ $ gitbook build
                 </a>
                 
                 
-                <a href="section1.2.html" class="navigation navigation-next " aria-label="Next page: node">
+                <a href="1/" class="navigation navigation-next " aria-label="Next page: 插件">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -378,7 +445,7 @@ $ gitbook build
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"gitbook的使用","level":"1.2.1","depth":2,"next":{"title":"node","level":"1.2.2","depth":2,"path":"chapter1/section1.2.md","ref":"chapter1/section1.2.md","articles":[]},"previous":{"title":"问题集","level":"1.2","depth":1,"path":"chapter1/README.md","ref":"chapter1/README.md","articles":[{"title":"gitbook的使用","level":"1.2.1","depth":2,"path":"chapter1/section1.1.md","ref":"chapter1/section1.1.md","articles":[]},{"title":"node","level":"1.2.2","depth":2,"path":"chapter1/section1.2.md","ref":"chapter1/section1.2.md","articles":[]},{"title":"yarn","level":"1.2.3","depth":2,"path":"chapter1/section1.3.md","ref":"chapter1/section1.3.md","articles":[]},{"title":"mongo","level":"1.2.4","depth":2,"path":"chapter1/section1.4.md","ref":"chapter1/section1.4.md","articles":[]},{"title":"docker","level":"1.2.5","depth":2,"path":"chapter1/section1.5.md","ref":"chapter1/section1.5.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/section1.1.md","mtime":"2018-03-20T09:47:41.586Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-13T08:37:36.099Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"gitbook的使用","level":"1.2.1","depth":2,"next":{"title":"插件","level":"1.2.1.1","depth":3,"path":"chapter1/1/README.md","ref":"chapter1/1/README.md","articles":[{"title":"flow","level":"1.2.1.1.1","depth":4,"path":"chapter1/1/section1.md","ref":"chapter1/1/section1.md","articles":[]}]},"previous":{"title":"问题集","level":"1.2","depth":1,"path":"chapter1/README.md","ref":"chapter1/README.md","articles":[{"title":"gitbook的使用","level":"1.2.1","depth":2,"path":"chapter1/section1.1.md","ref":"chapter1/section1.1.md","articles":[{"title":"插件","level":"1.2.1.1","depth":3,"path":"chapter1/1/README.md","ref":"chapter1/1/README.md","articles":[{"title":"flow","level":"1.2.1.1.1","depth":4,"path":"chapter1/1/section1.md","ref":"chapter1/1/section1.md","articles":[]}]}]},{"title":"node","level":"1.2.2","depth":2,"path":"chapter1/section1.2.md","ref":"chapter1/section1.2.md","articles":[]},{"title":"yarn","level":"1.2.3","depth":2,"path":"chapter1/section1.3.md","ref":"chapter1/section1.3.md","articles":[]},{"title":"mongo","level":"1.2.4","depth":2,"path":"chapter1/section1.4.md","ref":"chapter1/section1.4.md","articles":[]},{"title":"docker","level":"1.2.5","depth":2,"path":"chapter1/section1.5.md","ref":"chapter1/section1.5.md","articles":[]},{"title":"git","level":"1.2.6","depth":2,"path":"chapter1/section1.6.md","ref":"chapter1/section1.6.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["codeblock-filename","flowchart","sequence","katex"],"pluginsConfig":{"sequence":{"theme":"simple"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"flowchart":{"line-color":"black"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/section1.1.md","mtime":"2018-04-23T01:10:08.877Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-23T02:20:31.488Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -386,10 +453,6 @@ $ gitbook build
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

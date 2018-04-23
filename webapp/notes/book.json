@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "codeblock-filename",
+    "flowchart",
+    "sequence",
+    "katex"
+  ],
+  "pluginsConfig": {
+    "flowchart": {
+      "line-color": "black"
+    },
+    "sequence": {
+      "theme": "simple"
+    }
+  }
+}
