@@ -21,11 +21,11 @@ module.exports = function (name) {
         // console.log(clearfix.length);
         let _length = clearfix.length > 20 ? 20 : clearfix.length;
         // console.log(_length);
-        console.log(clearfix.eq(7).children('.col-xs-1').children('.tag-blue').children('i').html())
+        console.log(clearfix.eq(7).children('.col-xs-1').children('.tag-blue').html())
         for (let i = 1; i < _length; i++) {
           novelList.push({
             // 类型: types
-            'types': clearfix.eq(i).children('.col-xs-1').children('.tag-blue').children('i').html(),
+            'types': clearfix.eq(i).children('.col-xs-1').children('.tag-blue').html(),
             // 小说名称:novel
             'novel': clearfix.eq(i).children('.col-xs-3').children('a').html(),
             'novel_url': 'https://www.boquge.com' + clearfix.eq(i).children('.col-xs-3').children('a').attr('href'),
