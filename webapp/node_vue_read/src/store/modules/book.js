@@ -1,8 +1,8 @@
-import {getSearchList} from "@/config/api";
+import {getBookList} from "@/config/api";
 import config from "@/config/config";
 
 // 常量
-const GET_SEARCH_LIST = "GET_SEARCH_LIST"; // 搜素列表
+const GET_BOOK_LIST = "GET_BOOK_LIST"; // 搜素列表
 // state
 const state = {
   list: {}
@@ -16,12 +16,11 @@ const actions = {};
 
 // mutations
 const mutations = {
-  GET_SEARCH_LIST(state, name) {
-    getSearchList(name).then(res => {
+  GET_BOOK_LIST(state, url) {
+    getBookList(url).then(res => {
       state.list = res.data;
     });
-  },
-
+  }
 };
 
 export default {

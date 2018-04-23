@@ -9,7 +9,7 @@
     </div>
     <div>
       <!-- <button @click="add(num)">+</button> -->
-       <!--<button @click="reduce(num)">-</button> -->
+      <!-- <button @click="reduce(num)">-</button> -->
       <button @click="addAction">+</button>
       <button @click="reduceAction">-</button>
     </div>

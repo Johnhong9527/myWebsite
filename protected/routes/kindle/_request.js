@@ -1,7 +1,8 @@
 // 网络请求模块
 let originRequest = require('request');
+const cheerio = require('cheerio');
+const iconv = require('iconv-lite');
 let headers = {
-
   // 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   // 'Accept-Encoding': 'gzip, deflate, br',
   // 'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -15,16 +16,39 @@ let headers = {
 }
 
 // 封装的方法
-function request(url, callback) {
-  let _callback = callback;
-  let options = {
-    url: url,
-    encoding: null,
-    //代理服务器
-    //proxy: 'http://xxx.xxx.xxx.xxx:8888',
-    headers: headers
-  }
-  originRequest(options, _callback)
-}
+// function request(url, callback) {
+//   let _callback = callback;
+//   let options = {
+//     url: url,
+//     encoding: null,
+//     //代理服务器
+//     //proxy: 'http://xxx.xxx.xxx.xxx:8888',
+//     headers: headers
+//   }
+//   originRequest(options, _callback)
+// }
+//
+// module.exports = request;
 
-module.exports = request;
+module.exports = function (url) {
+  return new Promise((resolve, reject) => {
+    let options = {
+      url: url,
+      encoding: null,
+      //代理服务器
+      //proxy: 'http://xxx.xxx.xxx.xxx:8888',
+      headers: headers
+    };
+    originRequest(options, function (err, res, body) {
+      if(err){
+        reject(err)
+      } else {
+        let html = iconv.decode(body, 'gb2312');
+        let $ = cheerio.load(html, {
+          decodeEntities: false,
+        });
+        resolve($)
+      }
+    })
+  })
+}
