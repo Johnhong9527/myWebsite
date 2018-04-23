@@ -1,6 +1,12 @@
 # git:删除历史提交中的所有大文件
 [bfg](https://rtyley.github.io/bfg-repo-cleaner/)<br>
+<<<<<<< HEAD
 [git filter-barch](https://help.github.com/articles/removing-sensitive-data-from-a-repository/)
+=======
+[git filter-barch](https://help.github.com/articles/removing-sensitive-data-from-a-repository/)<br>
+[记一次删除Git记录中的大文件的过程](http://www.hollischuang.com/archives/1708)<br>
+[寻找并删除Git记录中的大文件](http://harttle.land/2016/03/22/purge-large-files-in-gitrepo.html)<br>
+>>>>>>> 5255e396da29d56c6a4114bb05f25186e95069f7
 
 ### bfg介绍
 bfg是基于java环境运行的，所以在使用之前，电脑需要配置java。配置教程可以上网查询。

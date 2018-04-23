@@ -18,9 +18,10 @@ module.exports = function (name) {
           decodeEntities: false,
         });
         let clearfix = $('.clearfix');
-        console.log(clearfix.length);
+        // console.log(clearfix.length);
         let _length = clearfix.length > 20 ? 20 : clearfix.length;
-        console.log(_length);
+        // console.log(_length);
+        console.log(clearfix.eq(7).children('.col-xs-1').children('.tag-blue').children('i').html())
         for (let i = 1; i < _length; i++) {
           novelList.push({
             // 类型: types

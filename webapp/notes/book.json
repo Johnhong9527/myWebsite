@@ -1,3 +1,21 @@
 {
+<<<<<<< HEAD
   "plugins": ["codeblock-filename"]
+=======
+  "plugins": [
+    "codeblock-filename",
+    "flowchart",
+    "sequence",
+    "katex",
+    "toggle-chapters"
+  ],
+  "pluginsConfig": {
+    "flowchart": {
+      "line-color": "black"
+    },
+    "sequence": {
+      "theme": "simple"
+    }
+  }
+>>>>>>> 5255e396da29d56c6a4114bb05f25186e95069f7
 }
