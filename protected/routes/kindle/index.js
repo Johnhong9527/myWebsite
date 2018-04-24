@@ -32,7 +32,7 @@ router.get('/send', function (req, res, next) {
   })
     .then(_res => {
       // console.log(_res);
-
+      
       r.render('index', {title: '已接收：' + _res.accepted});
     })
     .catch(_err => {
@@ -54,7 +54,7 @@ let books = [],
 /* GET home page. */
 
 router.get('/', function (req, res, next) {
-
+  
   let _res = res;
   res.send('ok');
   res.sendFile(path.join(__dirname + 'kindle/index.html'));
@@ -106,12 +106,12 @@ router.get('/down', function (req, res, next) {
   let params = URL.parse(req.url, true).query;
   _list(params.url).then(sres => {
     // res.send(sres)
-    console.log(109)
+    // console.log(109)
     _down(sres).then(r => {
-      console.log(r)
+      // console.log(r)
       res.send(r)
     }).catch(e => {
-      console.log(e)
+      res.send(err)
     })
   }).catch(err => {
     res.send(err)
@@ -152,7 +152,7 @@ router.get('/search', function (req, res, next) {
   //   console.log(clearfix.eq(5).html());
   //   console.log('end');
   // });
-
+  
   // return;
   // request
   //   .get('https://www.boquge.com/search.htm?keyword=' + params.name)
@@ -171,7 +171,7 @@ router.get('/search', function (req, res, next) {
   //     //   reject(false);
   //     // }
   //   });
-
+  
   // return;
   // _cros(params)
   //   .then(_res => {
