@@ -37,7 +37,6 @@ module.exports = function (list) {
   return new Promise((resolve, reject) => {
     let i = 0, len = 5, books = [];
     down();
-    
     function down() {
       let time = setTimeout(() => {
         console.log(i)
