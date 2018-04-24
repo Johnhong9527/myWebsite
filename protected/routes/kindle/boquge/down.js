@@ -37,14 +37,15 @@ module.exports = function (list) {
   return new Promise((resolve, reject) => {
     let i = 0, len = 5, books = [];
     down();
+    
     function down() {
       let time = setTimeout(() => {
         console.log(i)
-        if (list[i].title) {
-          if (i === len) {
-            clearTimeout(time);
-            resolve(books)
-          }
+        if (i === len) {
+          clearTimeout(time);
+          resolve(books)
+        }
+        if (list[i]) {
           request(list[i].title_url).then($ => {
             let content = $('#txtContent').html();
             content = content.replace(/<div class="gad2"><script type="text\/javascript">try{mad1\(\);} catch\(ex\){}<\/script><\/div>/g, ' ');
