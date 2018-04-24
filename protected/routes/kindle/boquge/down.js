@@ -42,7 +42,7 @@ module.exports = function (list) {
       let time = setTimeout(() => {
         console.log(i)
         if (i === len) {
-          clearTimeout(time);
+          clearInterval(time);
           resolve(books)
         }
         if (list[i]) {
