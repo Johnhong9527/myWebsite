@@ -1,3 +1,51 @@
+// http://www.cnblogs.com/hustskyking/p/principle-of-javascript-template.html#comment_tip
+var tpl = '<h3>h3</h3><% for(var i = 0; i < this.posts.length; i++) {' +
+  'var post = this.posts[i]; %>' +
+  '<% if(!post.expert){ %>' +
+  '<span>post is null</span>' +
+  '<% } else { %>' +
+  '<a href="#"><% post.expert %> at <% post.time %></a>' +
+  '<% } %>' +
+  '<% } %>';
+
+var data = {
+  "posts": [{
+    "expert": "content 1",
+    "time": "yesterday"
+  },{
+    "expert": "content 2",
+    "time": "today"
+  },{
+    "expert": "content 3",
+    "time": "tomorrow"
+  },{
+    "expert": "",
+    "time": "eee"
+  }]
+};
+
+var tplEngine = function(tpl, data) {
+  var reg = /<%([^%>]+)?%>/g,
+    regOut = /(^( )?(if|for|else|switch|case|break|{|}))(.*)?/g,
+    code = 'var r=[];\n',
+    cursor = 0;
+
+  var add = function(line, js) {
+    js? (code += line.match(regOut) ? line + '\n' : 'r.push(' + line + ');\n') :
+      (code += line != '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '');
+    return add;
+  }
+  while(match = reg.exec(tpl)) {
+    add(tpl.slice(cursor, match.index))(match[1], true);
+    cursor = match.index + match[0].length;
+  }
+  add(tpl.substr(cursor, tpl.length - cursor));
+  code += 'return r.join("");';
+  console.log(code);
+  return new Function(code.replace(/[\r\t\n]/g, '')).apply(data);
+};
+
+console.log(tplEngine(tpl,data));
 module.exports = function (name, list) {
   let html = `<?xml version="1.0" encoding="iso-8859-1"?>
 <package unique-identifier="uid" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:asd="http://www.idpf.org/asdfaf">
