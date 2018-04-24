@@ -21,6 +21,66 @@ const _search = require('./boquge/search');
 const _list = require('./boquge/list');
 const _down = require('./boquge/down');
 
+const opf = require('./opf');
+router.get('/read', function (req, res, next) {
+  let result = JSON.parse(fs.readFileSync(__dirname + '/boquge/book.json'));
+  let book = '', nav = '';
+
+  book = opf('hh',result);
+  fs.writeFile(__dirname + '/book.opf', book, function (err) {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log('写入成功');
+      res.send(result)
+    }
+  });
+
+  return;
+  // 创建文件夹
+  fs.exists(__dirname + '/book', function (exists) {
+    if(!exists){
+      fs.mkdir(__dirname + '/book', function (err) {
+        if (err)
+          throw err;
+        console.log('创建目录成功');
+      });
+    }
+    // 创建目录
+    nav = '﻿<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"></head><body><nav epub:type="toc"><ol>'
+    Object.keys(result).forEach(key => {
+      nav += `<li><a href="Sway_body.html#part_${key}">${result[key].title}</a></li>`
+    })
+    nav += `</ol></nav></body></html>`
+    fs.writeFile(__dirname + '/book/nav.html', nav, function (err) {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log('写入成功');
+      }
+    });
+
+  });
+  /*Object.keys(result).forEach(key => {
+    book += `<div style="margin-left:2%;>${result[key].title}</div>`
+  })*/
+  /*Object.keys(result).forEach(key => {
+    // console.log(result[key])
+    // console.log(result[key].content)
+    book +=`<h3 style="text-align: center;line-height: 2;">${result[key].title}</h3>`;
+    for(let i in result[key].content){
+      book +=`<div>${result[key].content[i]}</div>`;
+    }
+  });*/
+  /*fs.writeFile(__dirname + '/test.html', book, function (err) {
+    if(err) {
+      console.error(err);
+    } else {
+      console.log('写入成功');
+    }
+  });*/
+  res.send(result);
+})
 
 /* 浏览器输入地址（如127.0.0.1:3000/sned）后即发送 */
 router.get('/send', function (req, res, next) {
@@ -32,7 +92,7 @@ router.get('/send', function (req, res, next) {
   })
     .then(_res => {
       // console.log(_res);
-      
+
       r.render('index', {title: '已接收：' + _res.accepted});
     })
     .catch(_err => {
@@ -54,7 +114,7 @@ let books = [],
 /* GET home page. */
 
 router.get('/', function (req, res, next) {
-  
+
   let _res = res;
   res.send('ok');
   res.sendFile(path.join(__dirname + 'kindle/index.html'));
@@ -152,7 +212,7 @@ router.get('/search', function (req, res, next) {
   //   console.log(clearfix.eq(5).html());
   //   console.log('end');
   // });
-  
+
   // return;
   // request
   //   .get('https://www.boquge.com/search.htm?keyword=' + params.name)
@@ -171,7 +231,7 @@ router.get('/search', function (req, res, next) {
   //     //   reject(false);
   //     // }
   //   });
-  
+
   // return;
   // _cros(params)
   //   .then(_res => {

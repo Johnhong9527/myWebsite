@@ -32,6 +32,8 @@ for (let i in books) {
   }
 }*/
 
+
+
 let request = require('../_request');
 module.exports = function (list) {
   return new Promise((resolve, reject) => {

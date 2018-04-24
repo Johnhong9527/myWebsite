@@ -74,7 +74,7 @@ ${$body}
       // console.log("--------我是分割线-------------")
       // console.log("读取写入的数据！");
       shell.cd('../Downloads');
-      shell.exec('cd ../Downloads/ && kindlegen '+ $title + '.html').stdout;
+      shell.exec('cd ../Downloads/ && kindlegen ' + $title + '.html').stdout;
       // shell.exec('kindlegen'+ text_name).stdout;
       return;
       fs.readFile(text_name, function (err, data) {
@@ -89,14 +89,7 @@ ${$body}
 
 // 目录
 function list(item) {
-  let s = `
-<h3>
-	<b>${item.index}<br />
-	<a href="UG-C10.html">${item[1] != undefined ? item.title : ''}</a>
-	</b>
-</h3><br />
-<pre>${item.txtContent}</pre>
-`;
+  let s = `<h3><b>${item.index}<br /><a href="UG-C10.html">${item[1] != undefined ? item.title : ''}</a></b></h3><br/><pre>${item.txtContent}</pre>`;
   return s
 }
 

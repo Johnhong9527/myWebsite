@@ -48,7 +48,7 @@
       <!--<el-row class="items_list">
         <el-col :span="5" v-for="(o, index) in 20" :key="o">
           <el-card :data-index="index" :body-style="{ padding: '0px' }">
-            <img src="http://element-cn.eleme.io/static/hamburger.50e4091.png" class="image">
+            <img src="http://element-cn.eleme.io/static/hamburger.50e4091.png" class="images">
             <div style="padding: 14px;">
               <span>好吃的汉堡</span>
               <div class="bottom clearfix">
