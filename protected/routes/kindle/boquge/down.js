@@ -44,8 +44,7 @@ module.exports = function (list) {
         if (i === len) {
           clearInterval(time);
           resolve(books)
-        }
-        if (list[i]) {
+        } else if (list[i]) {
           request(list[i].title_url).then($ => {
             let content = $('#txtContent').html();
             content = content.replace(/<div class="gad2"><script type="text\/javascript">try{mad1\(\);} catch\(ex\){}<\/script><\/div>/g, ' ');
