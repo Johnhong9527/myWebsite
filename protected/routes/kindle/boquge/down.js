@@ -40,11 +40,12 @@ module.exports = function (list) {
     
     function down() {
       let time = setTimeout(() => {
-        if (i === len) {
-          clearTimeout(time);
-          resolve(books)
-        } else if (list[i].title) {
-          console.log(i);
+        console.log(i)
+        if (list[i].title) {
+          if (i === len) {
+            clearTimeout(time);
+            resolve(books)
+          }
           request(list[i].title_url).then($ => {
             let content = $('#txtContent').html();
             content = content.replace(/<div class="gad2"><script type="text\/javascript">try{mad1\(\);} catch\(ex\){}<\/script><\/div>/g, ' ');
@@ -53,11 +54,11 @@ module.exports = function (list) {
               'title': list[i].title,
               'content': content
             })
+            i++;
+            down();
           }).catch(err => {
             reject(err)
           });
-          i++;
-          down();
         }
       }, 1000)
     }
