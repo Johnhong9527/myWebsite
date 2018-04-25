@@ -21,25 +21,55 @@ const _search = require('./boquge/search');
 const _list = require('./boquge/list');
 const _down = require('./boquge/down');
 
-const opf = require('./opf');
+// kindle模板
+const kindle_opf = require('./util/opf');
+const kindle_toc = require('./util/toc');
+const kindle_toc_ncx = require('./util/toc_ncx');
+const kindle_text = require('./util/text');
 router.get('/read', function (req, res, next) {
   let result = JSON.parse(fs.readFileSync(__dirname + '/boquge/book.json'));
   let book = '', nav = '';
-
-  book = opf('hh',result);
-  fs.writeFile(__dirname + '/book.opf', book, function (err) {
+  // opf
+  fs.writeFile(__dirname + `/book/book.opf`, kindle_opf('book', result), function (err) {
     if (err) {
       console.error(err);
     } else {
-      console.log('写入成功');
-      res.send(result)
+      console.log(`/book/book.opf写入成功`);
     }
   });
+  // text.html
+  for (let i in result) {
+    fs.writeFile(__dirname + `/book/page/text${result[i].index}.html`, kindle_text(result[i]), function (err) {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(`text${result[i].index}.html写入成功`);
+      }
+    });
+  }
+  // toc.html
+  fs.writeFile(__dirname + `/book/toc.html`, kindle_toc(result), function (err) {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(`/book/toc.html写入成功`);
+    }
+  });
+  // toc.ncx
+  fs.writeFile(__dirname + `/book/toc.ncx`, kindle_toc_ncx(result), function (err) {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(`/book/toc.ncx写入成功`);
+    }
+  });
+
+  res.send(result);
 
   return;
   // 创建文件夹
   fs.exists(__dirname + '/book', function (exists) {
-    if(!exists){
+    if (!exists) {
       fs.mkdir(__dirname + '/book', function (err) {
         if (err)
           throw err;

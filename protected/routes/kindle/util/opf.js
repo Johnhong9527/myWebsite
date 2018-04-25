@@ -1,4 +1,20 @@
 module.exports = function (name, list) {
+  function page1(list) {
+    let html = '';
+    for (let i in list) {
+      html += `<item id="text${ list[i].index}" media-type="text/x-oeb1-document" href="page/text${ list[i].index}.html"></item>\n`
+    }
+    return html
+  }
+
+  function page2(list) {
+    let html = '';
+    for (let i in list) {
+      html += `<itemref idref="text${list[i].index}"/>\n`
+    }
+    return html
+  }
+
   let html = `<?xml version="1.0" encoding="iso-8859-1"?>
 <package unique-identifier="uid" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:asd="http://www.idpf.org/asdfaf">
     <metadata>
@@ -17,15 +33,11 @@ module.exports = function (name, list) {
     <manifest>
         <item id="content" media-type="text/x-oeb1-document" href="toc.html"></item>
         <item id="ncx" media-type="application/x-dtbncx+xml" href="toc.ncx"/>
-        <% for(let i in list) { %>
-            <item id="text<%= i+1 %>" media-type="text/x-oeb1-document" href="page/text<%= i+1 %>.html"></item>
-        <% } %>        
+          ${page1(list)}   
     </manifest>
     <spine toc="ncx">
         <itemref idref="content"/>
-        <% for(let i in list) { %>
-            <itemref idref="text<%= i %>"/>
-        <% } %> 
+        ${page2(list)}
 		</spine>
     <guide>
         <reference type="toc" title="Table of Contents" href="toc.html"/>
