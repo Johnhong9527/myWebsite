@@ -22,12 +22,10 @@ export function getBookList(url) {
   })
 }
 
-export function getDown(url) {
+export function getDown(item) {
   return new Promise((resolve, reject) => {
     axios.get(config.apiPath() + "kindle/down", {
-      params: {
-        url: url
-      }
+      params: item
     }).then(res => resolve(res)).catch(err => reject(err))
   })
 }

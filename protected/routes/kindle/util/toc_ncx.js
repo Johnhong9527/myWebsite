@@ -1,4 +1,4 @@
-module.exports = function (list) {
+module.exports = function (name,list) {
 
   function page(list) {
     let html = ''
@@ -16,7 +16,7 @@ module.exports = function (list) {
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   </head>
   <docTitle>
-    <text>KF8</text>
+    <text>${name}</text>
   </docTitle>
 <navMap>
 <navPoint id="navpoint-1" playOrder="1"><navLabel><text>Content</text></navLabel><content src="toc.html#toc"/></navPoint>

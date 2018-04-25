@@ -26,6 +26,8 @@ const kindle_opf = require('./util/opf');
 const kindle_toc = require('./util/toc');
 const kindle_toc_ncx = require('./util/toc_ncx');
 const kindle_text = require('./util/text');
+
+// 自定义变量
 router.get('/read', function (req, res, next) {
   let result = JSON.parse(fs.readFileSync(__dirname + '/boquge/book.json'));
   let book = '', nav = '';
@@ -67,30 +69,7 @@ router.get('/read', function (req, res, next) {
   res.send(result);
 
   return;
-  // 创建文件夹
-  fs.exists(__dirname + '/book', function (exists) {
-    if (!exists) {
-      fs.mkdir(__dirname + '/book', function (err) {
-        if (err)
-          throw err;
-        console.log('创建目录成功');
-      });
-    }
-    // 创建目录
-    nav = '﻿<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"></head><body><nav epub:type="toc"><ol>'
-    Object.keys(result).forEach(key => {
-      nav += `<li><a href="Sway_body.html#part_${key}">${result[key].title}</a></li>`
-    })
-    nav += `</ol></nav></body></html>`
-    fs.writeFile(__dirname + '/book/nav.html', nav, function (err) {
-      if (err) {
-        console.error(err);
-      } else {
-        console.log('写入成功');
-      }
-    });
 
-  });
   /*Object.keys(result).forEach(key => {
     book += `<div style="margin-left:2%;>${result[key].title}</div>`
   })*/
@@ -194,14 +173,81 @@ router.get('/shell', function (req, res, next) {
 router.get('/down', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   let params = URL.parse(req.url, true).query;
-  _list(params.url).then(sres => {
-    // res.send(sres)
-    // console.log(109)
-    _down(sres).then(r => {
-      // console.log(r)
-      res.send(r)
+
+  res.send(params);
+
+  _list(params.novel_list).then(sres => {
+    _down(sres).then(result => {
+      // 创建文件夹
+      fs.exists(__dirname + `/book/${params.index}`, function (exists) {
+        if (!exists) {
+          fs.mkdir(__dirname + `/book/${params.index}`, function (err) {
+            if (err)
+              throw err;
+            console.log(`/book/${params.index}  创建成功`);
+            setTimeout(function () {
+              // page
+              fs.exists(__dirname + `/book/${params.index}/page`, function (exists) {
+                if (!exists) {
+                  fs.mkdir(__dirname + `/book/${params.index}/page`, function (err) {
+                    if (err)
+                      throw err;
+                    console.log(`/book/${params.index}/page  创建成功`);
+                  });
+                }
+              });
+              // opf
+              fs.writeFile(__dirname + `/book/${params.index}/book.opf`, kindle_opf(params.novel, result), function (err) {
+                if (err) {
+                  console.error(err);
+                } else {
+                  console.log(`/book/${params.index}/book.opf写入成功`);
+
+                }
+              });
+              // toc.html
+              fs.writeFile(__dirname + `/book/${params.index}/toc.html`, kindle_toc(result), function (err) {
+                if (err) {
+                  console.error(err);
+                } else {
+                  console.log(`/book/${params.index}/toc.html写入成功`);
+                }
+              });
+              // toc.ncx
+              fs.writeFile(__dirname + `/book/${params.index}/toc.ncx`, kindle_toc_ncx(params.novel, result), function (err) {
+                if (err) {
+                  console.error(err);
+                } else {
+                  console.log(`/book/${params.index}/toc.ncx写入成功`);
+                }
+              });
+              // text.html
+              setTimeout(function () {
+                for (let i in result) {
+                  fs.writeFile(__dirname + `/book/${params.index}/page/text${result[i].index}.html`, kindle_text(result[i]), function (err) {
+                    if (err) {
+                      console.error(err);
+                    } else {
+                      console.log(`/book/${params.index}/page/text${result[i].index}.html写入成功`);
+                    }
+                  });
+                }
+              }, 100);
+            }, 100)
+          });
+        }
+      });
+
+
+      /*
+
+
+
+       */
+      // toc.nxc
+      // text
     }).catch(e => {
-      res.send(err)
+      res.send(e)
     })
   }).catch(err => {
     res.send(err)

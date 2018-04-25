@@ -86,8 +86,8 @@
         }
       },
       down(item) {
-        console.log(item.novel_list);
-        this.GET_BOOK_DOWN(item.novel_list)
+        console.log(item);
+        this.GET_BOOK_DOWN(item)
         // self.book.novel_list
       },
       bookList(item) {

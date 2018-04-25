@@ -34,14 +34,14 @@ const mutations = {
       // self = null
     });
   },
-  GET_BOOK_DOWN(state, url) {
+  GET_BOOK_DOWN(state, item) {
     let loading = Loading.service({
       lock: true,
       text: '加载中',
       // spinner: 'el-icon-loading',
       background: 'rgba(0, 0, 0, 0.7)'
     });
-    getDown(url).then(res => {
+    getDown(item).then(res => {
       console.log(res)
       // state.list = res.data;
       // state.info = self.book;
