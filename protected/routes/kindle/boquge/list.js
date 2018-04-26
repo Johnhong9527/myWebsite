@@ -1,5 +1,5 @@
 // 自定义全局方法
-let request = require('../_request');
+let request = require('../util/_request');
 module.exports = function (url) {
   return new Promise((resolve, reject) => {
     request(url).then($ => {

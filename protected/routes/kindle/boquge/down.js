@@ -1,7 +1,7 @@
 // 模块
 const fs = require('fs');
 // 自定义全局方法
-const request = require('../_request');
+const request = require('../util/_request');
 // kindle模块
 const kindle_opf = require('../util/opf');
 const kindle_toc = require('../util/toc');

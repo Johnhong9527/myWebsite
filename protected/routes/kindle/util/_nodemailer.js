@@ -4,7 +4,7 @@
 // import nodemailer from 'nodemailer';
 // import config from '../../config';
 const nodemailer = require('nodemailer');
-const config = require('../../config');
+const config = require('../../../config');
 module.exports = function(data) {
   return new Promise((resolve, reject) => {
     nodemailer.createTestAccount((err, account) => {

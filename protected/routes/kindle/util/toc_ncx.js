@@ -1,7 +1,7 @@
 module.exports = function (name,list) {
 
-  function page(list) {
-    let html = ''
+  function page() {
+    let html = '';
     for (let i in list) {
       html += `<navPoint id="navpoint-${Number.parseInt(i) + 2}" playOrder="${Number.parseInt(i) + 2}"><navLabel><text>${list[i].title}</text></navLabel><content src="page/text${list[i].index}.html#id${list[i].index}"/></navPoint>`
     }
@@ -20,7 +20,7 @@ module.exports = function (name,list) {
   </docTitle>
 <navMap>
 <navPoint id="navpoint-1" playOrder="1"><navLabel><text>Content</text></navLabel><content src="toc.html#toc"/></navPoint>
-${page(list)}
+${page()}
 </navMap>
 </ncx>`;
   return html
