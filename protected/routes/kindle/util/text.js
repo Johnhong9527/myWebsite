@@ -1,13 +1,14 @@
-module.exports = function (text) {
-  function page(text) {
-      let html = ''
-    html += `<h3 style="text-align: center;width: 100%" id="id${text.index}">${text.title}</h3><p>`;
-    for(let i in text.content){
-      html+= `${text.content[i]}\n`
+module.exports = function (item, content) {
+  function page() {
+    let html = ''
+    html += `<h3 style="text-align: center;width: 100%" id="id${item.index}">${item.title}</h3><p>`;
+    for (let i in content) {
+      html += `${content[i]}\n`
     }
-    html +='</p>'
+    html += '</p>'
     return html
   }
+
   let html = `<!DOCTYPE html>
 <html  xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
@@ -15,7 +16,7 @@ module.exports = function (text) {
     <title>Text Styling</title>
 </head>
 <body>
-${page(text)}
+${page()}
 </body>
 </html>`;
   return html

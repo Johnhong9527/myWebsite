@@ -173,85 +173,8 @@ router.get('/shell', function (req, res, next) {
 router.get('/down', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   let params = URL.parse(req.url, true).query;
-
   res.send(params);
-
-  _list(params.novel_list).then(sres => {
-    _down(sres).then(result => {
-      // 创建文件夹
-      fs.exists(__dirname + `/book/${params.index}`, function (exists) {
-        if (!exists) {
-          fs.mkdir(__dirname + `/book/${params.index}`, function (err) {
-            if (err)
-              throw err;
-            console.log(`/book/${params.index}  创建成功`);
-            setTimeout(function () {
-              // page
-              fs.exists(__dirname + `/book/${params.index}/page`, function (exists) {
-                if (!exists) {
-                  fs.mkdir(__dirname + `/book/${params.index}/page`, function (err) {
-                    if (err)
-                      throw err;
-                    console.log(`/book/${params.index}/page  创建成功`);
-                  });
-                }
-              });
-              // opf
-              fs.writeFile(__dirname + `/book/${params.index}/book.opf`, kindle_opf(params.novel, result), function (err) {
-                if (err) {
-                  console.error(err);
-                } else {
-                  console.log(`/book/${params.index}/book.opf写入成功`);
-
-                }
-              });
-              // toc.html
-              fs.writeFile(__dirname + `/book/${params.index}/toc.html`, kindle_toc(result), function (err) {
-                if (err) {
-                  console.error(err);
-                } else {
-                  console.log(`/book/${params.index}/toc.html写入成功`);
-                }
-              });
-              // toc.ncx
-              fs.writeFile(__dirname + `/book/${params.index}/toc.ncx`, kindle_toc_ncx(params.novel, result), function (err) {
-                if (err) {
-                  console.error(err);
-                } else {
-                  console.log(`/book/${params.index}/toc.ncx写入成功`);
-                }
-              });
-              // text.html
-              setTimeout(function () {
-                for (let i in result) {
-                  fs.writeFile(__dirname + `/book/${params.index}/page/text${result[i].index}.html`, kindle_text(result[i]), function (err) {
-                    if (err) {
-                      console.error(err);
-                    } else {
-                      console.log(`/book/${params.index}/page/text${result[i].index}.html写入成功`);
-                    }
-                  });
-                }
-              }, 100);
-            }, 100)
-          });
-        }
-      });
-
-
-      /*
-
-
-
-       */
-      // toc.nxc
-      // text
-    }).catch(e => {
-      res.send(e)
-    })
-  }).catch(err => {
-    res.send(err)
-  })
+  _down(params).then(sres=>console.log(sres)).catch(e=>console.log(res.send(e)));
 })
 
 router.get('/list', function (req, res, next) {
