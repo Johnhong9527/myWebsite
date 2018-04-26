@@ -26,7 +26,7 @@ module.exports = function (name, list) {
             <dc:Copyrights>Amazon.com</dc:Copyrights>
             <dc:Publisher>Amazon.com</dc:Publisher>
             <x-metadata>
-                <EmbeddedCover>images/cover.jpg</EmbeddedCover>
+                <EmbeddedCover>../images/cover.jpg</EmbeddedCover>
             </x-metadata>
         </dc-metadata>
     </metadata>
