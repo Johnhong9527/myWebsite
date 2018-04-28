@@ -34,7 +34,9 @@ let headers = {
 module.exports = function (url) {
   return new Promise((resolve, reject) => {
     let options = {
-      url: `https://api.honghaitao.net/cros?url=${url}`,
+      // url: `https://api.honghaitao.net/cros?url=${url}`,
+      // url: `http://127.0.0.1:3000/cros?url=${url}`,
+      url: url,
       encoding: null,
       //代理服务器
       //proxy: 'http://xxx.xxx.xxx.xxx:8888',
