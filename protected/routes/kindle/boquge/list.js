@@ -5,8 +5,8 @@ module.exports = function (url) {
     request(url).then($ => {
       let chapters_list = $('#chapters-list li');
       if (chapters_list && chapters_list.length > 0) {
-        // let _length = chapters_list.length > 100 ? 100 : chapters_list.length;
-        let _length = chapters_list.length;
+        let _length = chapters_list.length > 5 ? 5 : chapters_list.length;
+        // let _length = chapters_list.length;
         let novelList = [];
         for (let i = 0; i < _length; i++) {
           if (chapters_list.eq(i).children('a').html()) {

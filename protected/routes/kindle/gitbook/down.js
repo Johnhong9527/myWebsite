@@ -2,12 +2,18 @@
 const fs = require('fs');
 // 自定义全局方法
 const request = require('../util/_request');
+//
+const _list = require('../boquge/list');
+// gitbook模块
+const gitbook_readme = require('./readme');
+const gitbook_summary = require('./summary');
+const gitbook_html = require('./html');
+const gitbook = require('./gitbook');
 // kindle模块
 const kindle_opf = require('../util/opf');
 const kindle_toc = require('../util/toc');
 const kindle_toc_ncx = require('../util/toc_ncx');
 const kindle_text = require('../util/text');
-const _list = require('./list');
 const kindlegen = require('../util/kindlegen');
 module.exports = function (params) {
   return new Promise((resolve, reject) => {
@@ -19,30 +25,23 @@ module.exports = function (params) {
         _list(params.novel_list).then(sres => {
           list = sres;
           console.log(list[list.length - 1].title);
-          // opf
-          fs.writeFile(`./book/${params.index}/${params.index}.opf`, kindle_opf(params.novel, sres), function (err) {
+          // readme.md
+          fs.writeFile(`./gitbook/${params.index}/README.md`, gitbook_readme(params), function (err) {
             if (err) {
               console.error(err);
             } else {
-              console.log(`/book/${params.index}/${params.index}.opf写入成功`);
+              console.log(`./gitbook/${params.index}/README.md 写入成功`);
             }
           });
-          // toc.html
-          fs.writeFile(`./book/${params.index}/toc.html`, kindle_toc(sres), function (err) {
+          // gitbook_summary
+          fs.writeFile(`./gitbook/${params.index}/summary.md`, gitbook_summary(sres), function (err) {
             if (err) {
               console.error(err);
             } else {
-              console.log(`/book/${params.index}/toc.html写入成功`);
+              console.log(`./gitbook/${params.index}/summary.md 写入成功`);
             }
           });
-          // toc.ncx
-          fs.writeFile(`./book/${params.index}/toc.ncx`, kindle_toc_ncx(params.novel, sres), function (err) {
-            if (err) {
-              console.error(err);
-            } else {
-              console.log(`./book/${params.index}/toc.ncx写入成功`);
-            }
-          });
+
           down();
         });
 
@@ -50,13 +49,13 @@ module.exports = function (params) {
           let time = setTimeout(() => {
             if (i == list.length) {
               clearInterval(time);
-              fs.writeFile(`./book/${params.index}/${params.index}.json`, JSON.stringify(books), function (err) {
+              fs.writeFile(`./gitbook/${params.index}/${params.index}.json`, JSON.stringify(books), function (err) {
                 if (err) {
                   console.error(err);
                 } else {
-                  console.log(`./book/${params.index}/${params.index}.json写入成功`);
-                  console.log('正在执行打包程序');
-                  kindlegen(params.index);
+                  console.log(`./gitbook/${params.index}/${params.index}.json写入成功`);
+                  console.log('开始执行打包程序');
+                  gitbook(params.index);
                 }
               });
               resolve('下载完毕');
@@ -71,11 +70,11 @@ module.exports = function (params) {
                   'content': content
                 })
                 // console.log(list[i].index)
-                fs.writeFile(`./book/${params.index}/page/text${list[i].index}.html`, kindle_text(list[i], content), function (err) {
+                fs.writeFile(`./gitbook/${params.index}/page/text${list[i].index}.md`, gitbook_html(list[i].title, content), function (err) {
                   if (err) {
                     console.error(err);
                   } else {
-                    console.log(`./book/${params.index}/page/text${list[i].index}.html写入成功`);
+                    console.log(`./gitbook/${params.index}/page/text${list[i].index}.md 写入成功`);
                     i++;
                     down();
                   }
@@ -84,7 +83,7 @@ module.exports = function (params) {
                 reject(err)
               });
             }
-          }, 1000)
+          }, 500)
         }
       }
     }).catch(err => {
@@ -95,31 +94,31 @@ module.exports = function (params) {
 
 function mkdir(name) {
   return new Promise((resolve, reject) => {
-    if (!fs.existsSync(`./book`)) {
-      fs.mkdir(`./book`, function (err) {
+    if (!fs.existsSync(`./gitbook`)) {
+      fs.mkdir(`./gitbook`,'0777', function (err) {
         if (err) {
-          reject(`./book  创建失败`);
+          reject(`./gitbook  创建失败`);
           throw err;
         }
-        console.log(`./book  创建成功`);
+        console.log(`./gitbook  创建成功`);
       });
     }
-    if (!fs.existsSync(`./book/${name}`)) {
-      fs.mkdir(`./book/${name}`, function (err) {
+    if (!fs.existsSync(`./gitbook/${name}`)) {
+      fs.mkdir(`./gitbook/${name}`, '0777',function (err) {
         if (err) {
-          reject(`./book/${name}  创建失败`);
+          reject(`./gitbook/${name}  创建失败`);
           throw err;
         }
-        console.log(`./book/${name}  创建成功`);
+        console.log(`./gitbook/${name}  创建成功`);
       })
     }
-    if (!fs.existsSync(`./book${name}/page`)) {
-      fs.mkdir(`./book/${name}/page`, function (err) {
+    if (!fs.existsSync(`./gitbook${name}/page`)) {
+      fs.mkdir(`./gitbook/${name}/page`, '0777',function (err) {
         if (err) {
-          reject(`./book/${name}/page 构建失败`);
+          reject(`./gitbook/${name}/page 构建失败`);
           throw err;
         }
-        console.log(`./book${name}/page  创建成功`);
+        console.log(`./gitbook${name}/page  创建成功`);
       })
     }
     resolve(true)

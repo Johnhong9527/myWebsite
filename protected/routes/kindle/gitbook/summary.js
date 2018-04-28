@@ -7,6 +7,6 @@ module.exports = function(list) {
     }
     return html;
   }
-  let html = `# Summary\n${page()}`;
+  let html = `# Summary\n* [简介](README.md)\n${page()}`;
   return html;
 };
