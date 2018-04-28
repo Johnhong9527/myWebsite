@@ -4,7 +4,6 @@ const router = express.Router();
 const request = require('superagent');
 require('superagent-charset')(request);
 
-
 const userInfo = require('../util/userInfo');
 const findUser = require('../util/findUser');
 const Dictionary = require('./url');
@@ -97,4 +96,5 @@ router.all('/cros', function(req, res, next) {
       });
   }, 100);
 });
+
 module.exports = router;

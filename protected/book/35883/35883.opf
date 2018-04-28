@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<package unique-identifier="uid" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:asd="http://www.idpf.org/asdfaf">
+    <metadata>
+        <dc-metadata xmlns:dc="http://purl.org/metadata/dublin_core"
+                     xmlns:oebpackage="http://openebook.org/namespaces/oeb-package/1.0/">
+            <dc:Title>我的世界冷月之旅</dc:Title>
+            <dc:Language>zh</dc:Language>
+            <dc:Creator>Amazon.com</dc:Creator>
+            <dc:Copyrights>Amazon.com</dc:Copyrights>
+            <dc:Publisher>Amazon.com</dc:Publisher>
+            <x-metadata>
+                <EmbeddedCover>../images/cover.jpg</EmbeddedCover>
+            </x-metadata>
+        </dc-metadata>
+    </metadata>
+    <manifest>
+        <item id="content" media-type="text/x-oeb1-document" href="toc.html"></item>
+        <item id="ncx" media-type="application/x-dtbncx+xml" href="toc.ncx"/>
+          <item id="text2" media-type="text/x-oeb1-document" href="page/text2.html"></item>
+<item id="text4" media-type="text/x-oeb1-document" href="page/text4.html"></item>
+<item id="text5" media-type="text/x-oeb1-document" href="page/text5.html"></item>
+<item id="text6" media-type="text/x-oeb1-document" href="page/text6.html"></item>
+<item id="text7" media-type="text/x-oeb1-document" href="page/text7.html"></item>
+<item id="text8" media-type="text/x-oeb1-document" href="page/text8.html"></item>
+<item id="text9" media-type="text/x-oeb1-document" href="page/text9.html"></item>
+<item id="text10" media-type="text/x-oeb1-document" href="page/text10.html"></item>
+<item id="text11" media-type="text/x-oeb1-document" href="page/text11.html"></item>
+<item id="text12" media-type="text/x-oeb1-document" href="page/text12.html"></item>
+<item id="text13" media-type="text/x-oeb1-document" href="page/text13.html"></item>
+<item id="text14" media-type="text/x-oeb1-document" href="page/text14.html"></item>
+<item id="text15" media-type="text/x-oeb1-document" href="page/text15.html"></item>
+<item id="text16" media-type="text/x-oeb1-document" href="page/text16.html"></item>
+<item id="text17" media-type="text/x-oeb1-document" href="page/text17.html"></item>
+<item id="text18" media-type="text/x-oeb1-document" href="page/text18.html"></item>
+<item id="text19" media-type="text/x-oeb1-document" href="page/text19.html"></item>
+<item id="text20" media-type="text/x-oeb1-document" href="page/text20.html"></item>
+<item id="text21" media-type="text/x-oeb1-document" href="page/text21.html"></item>
+<item id="text22" media-type="text/x-oeb1-document" href="page/text22.html"></item>
+<item id="text23" media-type="text/x-oeb1-document" href="page/text23.html"></item>
+<item id="text24" media-type="text/x-oeb1-document" href="page/text24.html"></item>
+<item id="text25" media-type="text/x-oeb1-document" href="page/text25.html"></item>
+<item id="text26" media-type="text/x-oeb1-document" href="page/text26.html"></item>
+<item id="text27" media-type="text/x-oeb1-document" href="page/text27.html"></item>
+<item id="text28" media-type="text/x-oeb1-document" href="page/text28.html"></item>
+<item id="text29" media-type="text/x-oeb1-document" href="page/text29.html"></item>
+<item id="text30" media-type="text/x-oeb1-document" href="page/text30.html"></item>
+<item id="text31" media-type="text/x-oeb1-document" href="page/text31.html"></item>
+<item id="text32" media-type="text/x-oeb1-document" href="page/text32.html"></item>
+<item id="text33" media-type="text/x-oeb1-document" href="page/text33.html"></item>
+<item id="text34" media-type="text/x-oeb1-document" href="page/text34.html"></item>
+<item id="text35" media-type="text/x-oeb1-document" href="page/text35.html"></item>
+<item id="text36" media-type="text/x-oeb1-document" href="page/text36.html"></item>
+<item id="text37" media-type="text/x-oeb1-document" href="page/text37.html"></item>
+<item id="text38" media-type="text/x-oeb1-document" href="page/text38.html"></item>
+<item id="text39" media-type="text/x-oeb1-document" href="page/text39.html"></item>
+<item id="text40" media-type="text/x-oeb1-document" href="page/text40.html"></item>
+<item id="text41" media-type="text/x-oeb1-document" href="page/text41.html"></item>
+<item id="text42" media-type="text/x-oeb1-document" href="page/text42.html"></item>
+<item id="text43" media-type="text/x-oeb1-document" href="page/text43.html"></item>
+<item id="text44" media-type="text/x-oeb1-document" href="page/text44.html"></item>
+<item id="text45" media-type="text/x-oeb1-document" href="page/text45.html"></item>
+<item id="text46" media-type="text/x-oeb1-document" href="page/text46.html"></item>
+<item id="text47" media-type="text/x-oeb1-document" href="page/text47.html"></item>
+<item id="text48" media-type="text/x-oeb1-document" href="page/text48.html"></item>
+<item id="text49" media-type="text/x-oeb1-document" href="page/text49.html"></item>
+<item id="text50" media-type="text/x-oeb1-document" href="page/text50.html"></item>
+<item id="text51" media-type="text/x-oeb1-document" href="page/text51.html"></item>
+<item id="text52" media-type="text/x-oeb1-document" href="page/text52.html"></item>
+<item id="text53" media-type="text/x-oeb1-document" href="page/text53.html"></item>
+<item id="text54" media-type="text/x-oeb1-document" href="page/text54.html"></item>
+<item id="text55" media-type="text/x-oeb1-document" href="page/text55.html"></item>
+<item id="text56" media-type="text/x-oeb1-document" href="page/text56.html"></item>
+<item id="text57" media-type="text/x-oeb1-document" href="page/text57.html"></item>
+<item id="text58" media-type="text/x-oeb1-document" href="page/text58.html"></item>
+<item id="text59" media-type="text/x-oeb1-document" href="page/text59.html"></item>
+<item id="text60" media-type="text/x-oeb1-document" href="page/text60.html"></item>
+<item id="text61" media-type="text/x-oeb1-document" href="page/text61.html"></item>
+<item id="text62" media-type="text/x-oeb1-document" href="page/text62.html"></item>
+<item id="text63" media-type="text/x-oeb1-document" href="page/text63.html"></item>
+<item id="text64" media-type="text/x-oeb1-document" href="page/text64.html"></item>
+<item id="text65" media-type="text/x-oeb1-document" href="page/text65.html"></item>
+<item id="text66" media-type="text/x-oeb1-document" href="page/text66.html"></item>
+<item id="text67" media-type="text/x-oeb1-document" href="page/text67.html"></item>
+<item id="text68" media-type="text/x-oeb1-document" href="page/text68.html"></item>
+<item id="text69" media-type="text/x-oeb1-document" href="page/text69.html"></item>
+<item id="text70" media-type="text/x-oeb1-document" href="page/text70.html"></item>
+<item id="text71" media-type="text/x-oeb1-document" href="page/text71.html"></item>
+<item id="text72" media-type="text/x-oeb1-document" href="page/text72.html"></item>
+<item id="text73" media-type="text/x-oeb1-document" href="page/text73.html"></item>
+<item id="text74" media-type="text/x-oeb1-document" href="page/text74.html"></item>
+<item id="text75" media-type="text/x-oeb1-document" href="page/text75.html"></item>
+<item id="text76" media-type="text/x-oeb1-document" href="page/text76.html"></item>
+<item id="text77" media-type="text/x-oeb1-document" href="page/text77.html"></item>
+<item id="text78" media-type="text/x-oeb1-document" href="page/text78.html"></item>
+<item id="text79" media-type="text/x-oeb1-document" href="page/text79.html"></item>
+<item id="text80" media-type="text/x-oeb1-document" href="page/text80.html"></item>
+<item id="text81" media-type="text/x-oeb1-document" href="page/text81.html"></item>
+<item id="text82" media-type="text/x-oeb1-document" href="page/text82.html"></item>
+<item id="text83" media-type="text/x-oeb1-document" href="page/text83.html"></item>
+<item id="text84" media-type="text/x-oeb1-document" href="page/text84.html"></item>
+<item id="text85" media-type="text/x-oeb1-document" href="page/text85.html"></item>
+<item id="text86" media-type="text/x-oeb1-document" href="page/text86.html"></item>
+<item id="text87" media-type="text/x-oeb1-document" href="page/text87.html"></item>
+<item id="text88" media-type="text/x-oeb1-document" href="page/text88.html"></item>
+<item id="text89" media-type="text/x-oeb1-document" href="page/text89.html"></item>
+<item id="text90" media-type="text/x-oeb1-document" href="page/text90.html"></item>
+<item id="text91" media-type="text/x-oeb1-document" href="page/text91.html"></item>
+<item id="text92" media-type="text/x-oeb1-document" href="page/text92.html"></item>
+<item id="text93" media-type="text/x-oeb1-document" href="page/text93.html"></item>
+<item id="text94" media-type="text/x-oeb1-document" href="page/text94.html"></item>
+<item id="text95" media-type="text/x-oeb1-document" href="page/text95.html"></item>
+<item id="text96" media-type="text/x-oeb1-document" href="page/text96.html"></item>
+<item id="text97" media-type="text/x-oeb1-document" href="page/text97.html"></item>
+<item id="text98" media-type="text/x-oeb1-document" href="page/text98.html"></item>
+<item id="text99" media-type="text/x-oeb1-document" href="page/text99.html"></item>
+<item id="text100" media-type="text/x-oeb1-document" href="page/text100.html"></item>
+<item id="text101" media-type="text/x-oeb1-document" href="page/text101.html"></item>
+<item id="text102" media-type="text/x-oeb1-document" href="page/text102.html"></item>
+<item id="text103" media-type="text/x-oeb1-document" href="page/text103.html"></item>
+<item id="text104" media-type="text/x-oeb1-document" href="page/text104.html"></item>
+<item id="text105" media-type="text/x-oeb1-document" href="page/text105.html"></item>
+   
+    </manifest>
+    <spine toc="ncx">
+        <itemref idref="content"/>
+        <itemref idref="text2"/>
+<itemref idref="text4"/>
+<itemref idref="text5"/>
+<itemref idref="text6"/>
+<itemref idref="text7"/>
+<itemref idref="text8"/>
+<itemref idref="text9"/>
+<itemref idref="text10"/>
+<itemref idref="text11"/>
+<itemref idref="text12"/>
+<itemref idref="text13"/>
+<itemref idref="text14"/>
+<itemref idref="text15"/>
+<itemref idref="text16"/>
+<itemref idref="text17"/>
+<itemref idref="text18"/>
+<itemref idref="text19"/>
+<itemref idref="text20"/>
+<itemref idref="text21"/>
+<itemref idref="text22"/>
+<itemref idref="text23"/>
+<itemref idref="text24"/>
+<itemref idref="text25"/>
+<itemref idref="text26"/>
+<itemref idref="text27"/>
+<itemref idref="text28"/>
+<itemref idref="text29"/>
+<itemref idref="text30"/>
+<itemref idref="text31"/>
+<itemref idref="text32"/>
+<itemref idref="text33"/>
+<itemref idref="text34"/>
+<itemref idref="text35"/>
+<itemref idref="text36"/>
+<itemref idref="text37"/>
+<itemref idref="text38"/>
+<itemref idref="text39"/>
+<itemref idref="text40"/>
+<itemref idref="text41"/>
+<itemref idref="text42"/>
+<itemref idref="text43"/>
+<itemref idref="text44"/>
+<itemref idref="text45"/>
+<itemref idref="text46"/>
+<itemref idref="text47"/>
+<itemref idref="text48"/>
+<itemref idref="text49"/>
+<itemref idref="text50"/>
+<itemref idref="text51"/>
+<itemref idref="text52"/>
+<itemref idref="text53"/>
+<itemref idref="text54"/>
+<itemref idref="text55"/>
+<itemref idref="text56"/>
+<itemref idref="text57"/>
+<itemref idref="text58"/>
+<itemref idref="text59"/>
+<itemref idref="text60"/>
+<itemref idref="text61"/>
+<itemref idref="text62"/>
+<itemref idref="text63"/>
+<itemref idref="text64"/>
+<itemref idref="text65"/>
+<itemref idref="text66"/>
+<itemref idref="text67"/>
+<itemref idref="text68"/>
+<itemref idref="text69"/>
+<itemref idref="text70"/>
+<itemref idref="text71"/>
+<itemref idref="text72"/>
+<itemref idref="text73"/>
+<itemref idref="text74"/>
+<itemref idref="text75"/>
+<itemref idref="text76"/>
+<itemref idref="text77"/>
+<itemref idref="text78"/>
+<itemref idref="text79"/>
+<itemref idref="text80"/>
+<itemref idref="text81"/>
+<itemref idref="text82"/>
+<itemref idref="text83"/>
+<itemref idref="text84"/>
+<itemref idref="text85"/>
+<itemref idref="text86"/>
+<itemref idref="text87"/>
+<itemref idref="text88"/>
+<itemref idref="text89"/>
+<itemref idref="text90"/>
+<itemref idref="text91"/>
+<itemref idref="text92"/>
+<itemref idref="text93"/>
+<itemref idref="text94"/>
+<itemref idref="text95"/>
+<itemref idref="text96"/>
+<itemref idref="text97"/>
+<itemref idref="text98"/>
+<itemref idref="text99"/>
+<itemref idref="text100"/>
+<itemref idref="text101"/>
+<itemref idref="text102"/>
+<itemref idref="text103"/>
+<itemref idref="text104"/>
+<itemref idref="text105"/>
+
+		</spine>
+    <guide>
+        <reference type="toc" title="Table of Contents" href="toc.html"/>
+         <reference type="text" title="Book" href="text1.html"/>
+    </guide>
+</package>
