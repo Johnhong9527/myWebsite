@@ -82,7 +82,7 @@ router.all('/cros', function(req, res, next) {
   setTimeout(() => {
     request
       .get(url_str)
-      .charset('UTF-8')
+      .charset('gb2312')
       .end(function(req, resq) {
         if (resq.text) {
           // 将数据存入字典中
