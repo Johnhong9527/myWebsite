@@ -24,7 +24,7 @@ export function getBookList(url) {
 
 export function getDown(item) {
   return new Promise((resolve, reject) => {
-    axios.get(config.apiPath() + "kindle/down", {
+    axios.get(config.apiPath() + "kindle/gitbook", {
       params: item
     }).then(res => resolve(res)).catch(err => reject(err))
   })

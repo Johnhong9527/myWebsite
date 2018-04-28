@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [简介](README.md)
 * [问题集](chapter1/README.md)
     * [gitbook的使用](chapter1/section1.1.md)
         * [插件](chapter1/1/README.md)

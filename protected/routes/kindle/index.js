@@ -29,40 +29,14 @@ const kindle_text = require('./util/text');
 // gitbook模块
 const gitbook_summary = require('./gitbook/summary');
 const gitbook_html = require('./gitbook/html');
+const gitbook_down = require('./gitbook/down');
 router.get('/gitbook', function(req, res, next) {
-  let result = JSON.parse(fs.readFileSync(__dirname + '/boquge/39924.json'));
-  // summary
-  fs.writeFile(
-    __dirname + `/book/summary.md`,
-    gitbook_summary(result),
-    function(err) {
-      if (err) {
-        console.error(err);
-      } else {
-        console.log(`/book/book.opf写入成功`);
-        html();
-      }
-    }
-  );
-
-  // html
-  function html() {
-    for (let i = 0; i < result.length; i++) {
-      // for (let i = 0; i < 1000; i++){
-      fs.writeFile(
-        __dirname + `/book/page/text${result[i].index}.md`,
-        gitbook_html(result[i]),
-        function(err) {
-          if (err) {
-            console.error(err);
-          } else {
-            console.log(`/book/page/text${result[i].index}.md写入成功`);
-          }
-        }
-      );
-    }
-  }
-  res.send('ok');
+  res.header('Access-Control-Allow-Origin', '*');
+  let params = URL.parse(req.url, true).query;
+  res.send(params);
+  gitbook_down(params)
+    .then(sres => console.log(sres))
+    .catch(e => console.log(res.send(e)));
 });
 
 // 自定义变量
