@@ -3,7 +3,7 @@ const fs = require('fs');
 const shell = require('shelljs');
 // 自定义全局方法
 const request = require('../util/_request');
-//
+// 获取数据源
 const _list = require('../boquge/list');
 // gitbook模块
 const gitbook_readme = require('./readme');
@@ -16,23 +16,23 @@ module.exports = function (params) {
     mkdir(params.index).then(mkdirName => {
       if (mkdirName) {
         // 获取章节列表
-        path = `./gitbook/${params.index}/`
+        path = `./gitbook/${params.index}`
         _list(params.novel_list).then(sres => {
           list = sres;
           // readme.md
-          fs.writeFile(`${path}README.md`, gitbook_readme(params), function (err) {
+          fs.writeFile(`${path}/README.md`, gitbook_readme(params), function (err) {
             if (err) {
               console.error(err);
             } else {
-              console.log(`${path}README.md 写入成功`);
+              console.log(`${path}/README.md 写入成功`);
             }
           });
           // gitbook_summary
-          fs.writeFile(`${path}summary.md`, gitbook_summary(sres), function (err) {
+          fs.writeFile(`${path}/summary.md`, gitbook_summary(sres), function (err) {
             if (err) {
               console.error(err);
             } else {
-              console.log(`${path}summary.md 写入成功`);
+              console.log(`${path}/summary.md 写入成功`);
             }
           });
           down();
@@ -60,7 +60,7 @@ module.exports = function (params) {
                   'index': i + 1,
                   'content': content
                 })
-                fs.writeFile(`${path}page/text${list[i].index}.md`, gitbook_html(list[i].title, content), function (err) {
+                fs.writeFile(`${path}/page/text${list[i].index}.md`, gitbook_html(list[i].title, content), function (err) {
                   if (err) {
                     console.error(err);
                   } else {
