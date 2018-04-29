@@ -1,5 +1,6 @@
 // 模块
 const fs = require('fs');
+const shell = require('shelljs');
 // 自定义全局方法
 const request = require('../util/_request');
 //
@@ -8,7 +9,6 @@ const _list = require('../boquge/list');
 const gitbook_readme = require('./readme');
 const gitbook_summary = require('./summary');
 const gitbook_html = require('./html');
-const gitbook = require('./gitbook');
 // kindle模块
 const kindle_opf = require('../util/opf');
 const kindle_toc = require('../util/toc');
@@ -22,6 +22,7 @@ module.exports = function (params) {
     mkdir(params.index).then(mkdirName => {
       if (mkdirName) {
         // 获取章节列表
+        console.log(`获取数据列表`)
         _list(params.novel_list).then(sres => {
           list = sres;
           console.log(list[list.length - 1].title);
@@ -41,7 +42,7 @@ module.exports = function (params) {
               console.log(`./gitbook/${params.index}/summary.md 写入成功`);
             }
           });
-
+          console.log('开始生成单个章节文件');
           down();
         });
 
@@ -55,7 +56,8 @@ module.exports = function (params) {
                 } else {
                   console.log(`./gitbook/${params.index}/${params.index}.json写入成功`);
                   console.log('开始执行打包程序');
-                  gitbook(params.index);
+                  shell.exec(`cd ./gitbook/${params.index} && gitbook mobi ./ ./${params.index}.mobi`);
+                  shell.echo(`${params.index}.mobi打包完毕,开始执行邮件发送程序`);
                 }
               });
               resolve('下载完毕');
@@ -94,33 +96,36 @@ module.exports = function (params) {
 
 function mkdir(name) {
   return new Promise((resolve, reject) => {
-    if (!fs.existsSync(`./gitbook`)) {
-      fs.mkdir(`./gitbook`,'0777', function (err) {
+    if (fs.existsSync(`./gitbook`) === false) {
+      fs.mkdir(`./gitbook`, '0777', function (err) {
         if (err) {
           reject(`./gitbook  创建失败`);
           throw err;
         }
         console.log(`./gitbook  创建成功`);
       });
+    } else {
+      // 删除原有文件
+      console.log(`删除原有文件`);
+      shell.exec(`rm -rf ./gitbook/${name} ./gitbook/${name}/page`);
+      setTimeout(() => {
+        fs.mkdir(`./gitbook/${name}`, '0777', function (err) {
+          if (err) {
+            reject(`./gitbook/${name}  创建失败`);
+            throw err;
+          }
+          console.log(`./gitbook/${name}  创建成功`);
+          fs.mkdir(`./gitbook/${name}/page`, '0777', function (err) {
+            if (err) {
+              reject(`./gitbook/${name}/page 构建失败`);
+              throw err;
+            }
+            console.log(`./gitbook${name}/page  创建成功`);
+            resolve(true)
+          })
+        })
+      }, 200);
     }
-    if (!fs.existsSync(`./gitbook/${name}`)) {
-      fs.mkdir(`./gitbook/${name}`, '0777',function (err) {
-        if (err) {
-          reject(`./gitbook/${name}  创建失败`);
-          throw err;
-        }
-        console.log(`./gitbook/${name}  创建成功`);
-      })
-    }
-    if (!fs.existsSync(`./gitbook${name}/page`)) {
-      fs.mkdir(`./gitbook/${name}/page`, '0777',function (err) {
-        if (err) {
-          reject(`./gitbook/${name}/page 构建失败`);
-          throw err;
-        }
-        console.log(`./gitbook${name}/page  创建成功`);
-      })
-    }
-    resolve(true)
+
   })
 }
