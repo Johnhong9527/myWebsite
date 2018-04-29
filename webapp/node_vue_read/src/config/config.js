@@ -4,7 +4,7 @@ module.exports = {
       return 'https://api.honghaitao.net/'
       // return 'http://127.0.0.1:3000/'
     } else {
-      return ''
+      return 'http://127.0.0.1:3000/'
     }
   }
 };
