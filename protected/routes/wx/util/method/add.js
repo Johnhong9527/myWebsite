@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
+module.export = function() {
+  return new Promise((resolve, reject) => {
 
-async function add(params, cb) {}
-
-module.export = add;
+  });
+};

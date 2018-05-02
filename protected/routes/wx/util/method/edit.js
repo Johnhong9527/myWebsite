@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
+module.export = function() {
+  return new Promise((resolve, reject) => {
 
-async function edit(params, cb) {
-  return 'edit';
-}
-
-module.export = edit;
+  });
+};
