@@ -35,8 +35,9 @@ router.all('/', function (req, res, next) {
       .charset('gb2312')
       .end(function (req, resq) {
         if (resq.text) {
-          // 将数据存入字典中
-          if (dictionary.size() > 20) {
+          // 字典数据超过100条
+          if (dictionary.size() > 100) {
+            // 清空数据
             dictionary.clear();
           }
           dictionary.set(url_str, resq.text);
