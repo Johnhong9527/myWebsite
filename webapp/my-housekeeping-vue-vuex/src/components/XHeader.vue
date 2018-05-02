@@ -26,6 +26,11 @@ export default {
   methods: {
     // 返回
     bak() {
+      let path = this.$router.currentRoute.path;
+      if (/\/m\/list/.test(path) || /\/h\/info/.test(path)) {
+        return;
+      }
+      console.log(/\/m/g.test(path));
       if (this.back !== undefined) {
         this.$router.push({
           path: this.back,
