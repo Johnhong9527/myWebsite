@@ -1,23 +1,12 @@
 <template>
-  <div>
-    <span>
+  <div class="page" :style="{'background-color':bgColor}">
+    <div class="svg" @click="bak">
       <svg xmlns="http://www.w3.org/2000/svg" :width=line_size :height=line_height>
-        <line x1="0" :y1=line_height/2 :x2=line_size y2="0" :stroke=stroke :stroke-width=stroke_width></line>
-        <line x1="0" :y1=line_height/2 :x2=line_size :y2=line_height :stroke=stroke :stroke-width=stroke_width></line>
+        <line x1="0" :y1=line_height/2 :x2=line_size y2="0" :stroke=strokeColor :stroke-width=stroke_width></line>
+        <line x1="0" :y1=line_height/2 :x2=line_size :y2=line_height :stroke=strokeColor :stroke-width=stroke_width></line>
       </svg>
-    </span>
-    <div>
-      <hr/>{{stroke}}
-      <hr/> {{stroke_width}}
-      <hr/>
-      <div style="display:flex;">
-        <button @click="add">+</button>
-        <button @click="cut">-</button>
-        <button @click="stroke = 'blue'" style="background-color: blue;">blue</button>
-        <button @click="stroke = 'green'" style="background-color: green;">green</button>
-        <button @click="reload">reload</button>
-      </div>
     </div>
+    <div class="title" :style="{'color':strokeColor}">{{title}}</div>
   </div>
 </template>
 <script>
@@ -25,37 +14,57 @@ export default {
   data() {
     return {
       stroke: 'rgb(216, 55, 55)',
-      stroke_width: 4,
-      line_size: 30,
-      line_height: 40,
+      stroke_width: 2,
+      line_size: 15,
+      line_height: 20,
     };
   },
+  created() {
+    // this.stroke = 'rgb(255,255,255)'
+  },
+  props: ['title', 'bgColor', 'strokeColor', 'back'],
   methods: {
-    add() {
-      this.line_size++;
-      this.line_height++;
-      this.stroke_width++;
-    },
-    cut() {
-      this.line_size--;
-      this.line_height--;
-      this.stroke_width--;
-    },
-    reload() {
-      this.stroke = 'rgb(216, 55, 55)';
-      this.stroke_width = 4;
-      this.line_size = 30;
-      this.line_height = 40;
+    // 返回
+    bak() {
+      if (this.back !== undefined) {
+        this.$router.push({
+          path: this.back,
+        });
+      } else {
+        this.$router ? this.$router.back() : window.history.back();
+      }
+      // console.log(this.back);
+      // console.log('bak')
     },
   },
 };
 </script>
 <style lang="less" scoped>
 @import url('../assets/style.less');
+
 .bg {
   background-color: @bg_color;
 }
-button {
-  padding: 5vw;
+
+.page {
+  position: relative;
+  /*background-color: #e7ff75;*/
+  background-color: #333b45;
+
+  .svg {
+    top: 15px;
+    left: 15px;
+    position: absolute;
+  }
+  .title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 100;
+    color: white;
+    line-height: 50px;
+  }
+  button {
+    padding: 5vw;
+  }
 }
 </style>

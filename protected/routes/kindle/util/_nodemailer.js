@@ -65,8 +65,8 @@ module.exports = function(data) {
   //   html: '<h1>改成你的附件名</h1>',
   //   attachments: [
   //     {
-  //       filename: 'index.html', // 改成你的附件名
-  //       path: 'public/index.html', // 改成你的附件路径
+  //       filename: 'doc.html', // 改成你的附件名
+  //       path: 'public/doc.html', // 改成你的附件路径
   //       cid: '00000001', // cid可被邮件使用
   //     } /*,
   //       {

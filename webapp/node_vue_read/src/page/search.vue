@@ -97,7 +97,7 @@
       },
       reader(url) {
         // let url = 'https://www.boquge.com/xs/80199/index.html';
-        // novel_url = '/xs/33477/index.html'
+        // novel_url = '/xs/33477/doc.html'
         let urls = url.split('/')
         console.log(urls)
         for (let i in urls) {

@@ -15,7 +15,6 @@ export default {
     ...mapMutations(['GET_USERROLE']),
   },
   created() {
-    console.log(123)
     this.GET_USERROLE(this);
   },
 };

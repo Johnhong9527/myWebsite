@@ -72,7 +72,7 @@ module.exports = function (name) {
 };
 /*
 <div class="col-xs-1"><i class="tag-blue">都市</i></div>
-<div class="col-xs-3"><a href="/xs/70705/index.html">乡村极品妖孽</a></div>
+<div class="col-xs-3"><a href="/xs/70705/doc.html">乡村极品妖孽</a></div>
 <div class="col-xs-4"><a href="/book/70705/152946043.html">第749章 活人倒地，死人翻身</a></div>
 <div class="col-xs-2">君流香N</div>
 <div class="col-xs-2"><span class="time">2018-04-17 00:05</span></div>

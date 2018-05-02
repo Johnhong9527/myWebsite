@@ -3,12 +3,11 @@ const router = express.Router();
 // 网络请求模块
 const request = require('superagent');
 require('superagent-charset')(request);
-// 路径
-const path = require('path');
+// 缓存数据
 const Dictionary = require('./Dictionary');
 const dictionary = new Dictionary();
 
-// 跨域params
+// 跨域
 router.all('/', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   let url_str = '',

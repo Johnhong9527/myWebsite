@@ -2,7 +2,7 @@ import { getUser, getUserRole } from "@/config/api";
 import config from "@/config/config";
 
 // 常量
-const GET_USERINFO = "GET_USERINFO"; // 用户信息
+const GET_USER = "GET_USER"; // 用户信息
 const GET_USERROLE = "GET_USERROLE"; // 用户信息
 
 // state
@@ -20,7 +20,7 @@ const actions = {};
 
 // mutations
 const mutations = {
-  GET_USERINFO(state) {
+  GET_USER(state) {
     getUser(state.user_id).then(res => {
       state.info = res.data.data;
     });
@@ -29,19 +29,14 @@ const mutations = {
     setTimeout(() => {
       getUserRole(state.user_id).then(res => {
         state.is_teacher = res.data.is_teacher;
+        let path = self.$router.currentRoute.path;
         if (state.is_teacher === 1) {
           self.$router.push({ path: "/h/info" });
         } else if (state.is_teacher === 2) {
           self.$router.push({ path: "/m/list" });
         } else {
-          if (
-            self.$router.currentRoute.path !== "/order" &&
-            self.$router.currentRoute.path !== "/order/list" &&
-            self.$router.currentRoute.path !== "/order/add"
-          ) {
+          if (!/\/order/g.test(path)) {
             self.$router.push({ path: "/" });
-          } else {
-            self.$router.push({ path: "/order/add" });
           }
         }
         self = null;

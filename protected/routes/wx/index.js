@@ -56,7 +56,7 @@ router.post('/findUser', function(req, res) {
   // })
 });
 // 跨域params
-router.all('/CROS', function(req, res, next) {
+router.all('/cros', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   let url_str = '',
     _res = res;
