@@ -4,6 +4,6 @@ const USER = new mongoose.Schema({
   passwd: String,
   address: String,
   email: String,
-  phone: String
-})
+  phone: String,
+});
 module.exports = USER;

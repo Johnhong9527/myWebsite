@@ -1,10 +1,12 @@
-module.exports = function (list) {
+module.exports = function(list) {
   function page(list) {
-    let html = ''
+    let html = '';
     for (let i in list) {
-      html += `<li><a href="page/text${list[i].index}.html#id${list[i].index}">${list[i].title}</a></li>\n`
+      html += `<li><a href="page/text${list[i].index}.html#id${
+        list[i].index
+      }">${list[i].title}</a></li>\n`;
     }
-    return html
+    return html;
   }
 
   let html = `<!DOCTYPE html>
@@ -22,6 +24,6 @@ ${page(list)}
 </ul>
 </body>
 </html>
-`
-  return html
-}
+`;
+  return html;
+};

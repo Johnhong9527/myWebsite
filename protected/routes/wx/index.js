@@ -44,9 +44,9 @@ router.post('/findUser', function(req, res) {
     email: '1310512423@qq.com',
     phone: 15868600329,
   });
-  
+
   res.send('访问成功！');
-  
+
   // res.send({
   //   name: '李四',
   //   passwd: 'dsdd2*^1dsd&^^3fsd',
@@ -77,7 +77,7 @@ router.all('/cros', function(req, res, next) {
   if (dictionary.has(url_str)) {
     return _res.send(dictionary.get(url_str));
   }
-  
+
   setTimeout(() => {
     request
       .get(url_str)

@@ -1,6 +1,6 @@
 // 自定义全局方法
 let request = require('../util/_request');
-module.exports = function (url) {
+module.exports = function(url) {
   return new Promise((resolve, reject) => {
     request(url).then($ => {
       let chapters_list = $('#chapters-list li');
@@ -9,18 +9,31 @@ module.exports = function (url) {
         let _length = chapters_list.length;
         let novelList = [];
         for (let i = 0; i < _length; i++) {
-          if (chapters_list.eq(i).children('a').html()) {
+          if (
+            chapters_list
+              .eq(i)
+              .children('a')
+              .html()
+          ) {
             novelList.push({
-              'title': chapters_list.eq(i).children('a').html(),
-              'index':i+1,
-              'title_url': 'https://www.boquge.com' + chapters_list.eq(i).children('a').attr('href')
-            })
+              title: chapters_list
+                .eq(i)
+                .children('a')
+                .html(),
+              index: i + 1,
+              title_url:
+                'https://www.boquge.com' +
+                chapters_list
+                  .eq(i)
+                  .children('a')
+                  .attr('href'),
+            });
           }
         }
-        resolve(novelList)
+        resolve(novelList);
       } else {
         reject('获取失败');
       }
-    })
-  })
-}
+    });
+  });
+};

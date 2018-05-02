@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 async function find(params, cb) {
-  return 'find'
+  return 'find';
 }
 
 module.export = find;

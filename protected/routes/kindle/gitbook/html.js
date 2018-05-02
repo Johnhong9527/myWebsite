@@ -1,4 +1,4 @@
-module.exports = function (title, content) {
+module.exports = function(title, content) {
   function page() {
     let html = '';
     for (let i in content) {
