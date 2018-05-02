@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var kindle = require('./routes/kindle');
+var wx = require('./routes/wx');
+var cros = require('./routes/cros');
 
 var app = express();
 
@@ -24,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use('/', index);
 app.use('/kindle', kindle);
+app.use('/wx', wx);
+app.use('/cros', cros);
 
 
 app.all('*', (req, res, next) => {
