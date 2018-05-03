@@ -1,23 +1,42 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
+
 <body>
-<h1>
-  hello,welcome to my website!
-</h1>
-<h2>
-  classification
-</h2>
-<h4><a href="https://blog.honghaitao.net">My blog（Continue to add）</a></h4>
-<h4><a href="/wx">WeChat backend system（In development）</a></h4>
-<h4><a href="/kindle">Kindle backend system（Optimization）</a></h4>
-<h4><a href="/cros/doc.html">CROS document</a></h4>
+  <h1>
+    hello,welcome to my website!
+  </h1>
+  <h2>
+    classification
+  </h2>
+  <h4>
+    <a href="https://blog.honghaitao.net">My blog（Continue to add）</a>
+  </h4>
+  <h4>
+    <a href="/wx">WeChat backend system（In development）</a>
+  </h4>
+  <h4>
+    <a href="/kindle">Kindle backend system（Optimization）</a>
+  </h4>
+  <h4>
+    <a href="/cros/doc.html">CROS document</a>
+  </h4>
+
+  <script src="https://cdn.bootcss.com/socket.io/2.1.0/socket.io.js"></script>
+  <script>
+    var socket = io.connect('http://127.0.0.1:3000');
+    socket.on('news', function (data) {
+      console.log(data);
+      socket.emit('my other event', { my: 'data' });
+    });
+  </script>
 </body>
+
 </html>

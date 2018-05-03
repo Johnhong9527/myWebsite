@@ -57,3 +57,6 @@ $ docker run -it --rm --link some-mongo:mongo mongo mongo -u jsmith -p some-init
 some-db
 ```
 docker run -it --rm --link some-mongo:mongo mongo mongo -u jsmith -p some-initial-password --authenticationDatabase admin some-mongo/some-db
+
+#### 使用docker时遇到一些问题
+`Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)` 是本地DNS方面的问题，由于之前设置了 1.1.1.1,结果后面pull的时候出现这个问题

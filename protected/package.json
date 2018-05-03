@@ -28,6 +28,7 @@
     "request": "^2.85.0",
     "serve-favicon": "^2.4.5",
     "shelljs": "^0.8.1",
+    "socket.io": "^2.1.0",
     "superagent": "^3.8.2",
     "superagent-charset": "^1.2.0"
   }
