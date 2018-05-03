@@ -1,4 +1,4 @@
 #!/bin/bash
+sed -i 's/\"static\/js\/\"/\"kindle\/static\/js\/\"/g' ./dist/static/js/manifest.*.js
 rm -rf ../../protected/public/kindle/*
-mv dist/* ../../protected/public/kindle/
-# mkdir ../../protected/public/kindle/hh
+cp -r dist/* ../../protected/public/kindle/
