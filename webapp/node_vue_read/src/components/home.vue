@@ -24,7 +24,7 @@ export default {
     };
   },
   created() {
-    console.log(config.apiPath());
+    // console.log(config.apiPath());
     this.$store.commit('GET_USERINFO');
   },
   methods: {},

@@ -82,11 +82,11 @@
       ...mapMutations(['GET_SEARCH_LIST', 'GET_BOOK_LIST', 'GET_BOOK_DOWN']),
       search() {
         if (this.name != '') {
-          console.log(this.name)
+          // console.log(this.name)
         }
       },
       down(item) {
-        console.log(item);
+        // console.log(item);
         this.GET_BOOK_DOWN(item)
         // self.book.novel_list
       },
@@ -99,10 +99,10 @@
         // let url = 'https://www.boquge.com/xs/80199/index.html';
         // novel_url = '/xs/33477/doc.html'
         let urls = url.split('/')
-        console.log(urls)
+        // console.log(urls)
         for (let i in urls) {
           if (isNaN(urls[i])) {
-            console.log(urls[i])
+            // console.log(urls[i])
           }
         }
       }

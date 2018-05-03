@@ -42,7 +42,7 @@ const mutations = {
       background: 'rgba(0, 0, 0, 0.7)'
     });
     getDown(item).then(res => {
-      console.log(res)
+      // console.log(res)
       // state.list = res.data;
       // state.info = self.book;
       // self.$router.push({path: '/list'});

@@ -15,7 +15,7 @@
     },
     watch: {
       width: function (val, oldVal) {
-        console.log(val);
+        // console.log(val);
         if (val == "") {
           this.width = val = 0;
         }

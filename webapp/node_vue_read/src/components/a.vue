@@ -18,11 +18,11 @@ export default {
     };
   },
   created() {
-    console.log(this.user_info);
+    // console.log(this.user_info);
   },
   methods: {
     showInfo() {
-      console.log(this.user_info);
+      // console.log(this.user_info);
     },
   },
   computed: {
