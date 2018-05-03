@@ -6,7 +6,7 @@ import config from './config'
 // 获取用户信息
 export function getSearchList(name) {
   return new Promise(function (resolve, reject) {
-    axios.get(config.apiPath() + "kindle/search", {
+    axios.get(config.apiPath() + "search", {
       params: {name: name}
     }).then(res => resolve(res)).catch(erorr => reject(erorr));
   });
@@ -14,7 +14,7 @@ export function getSearchList(name) {
 
 export function getBookList(url) {
   return new Promise((resolve, reject) => {
-    axios.get(config.apiPath() + "kindle/list", {
+    axios.get(config.apiPath() + "list", {
       params: {
         url: url
       }
@@ -25,7 +25,7 @@ export function getBookList(url) {
 export function getDown(item) {
   return new Promise((resolve, reject) => {
     // axios.get(config.apiPath() + "kindle/gitbook", {
-    axios.get(config.apiPath() + "kindle/down", {
+    axios.get(config.apiPath() + "down", {
       params: item
     }).then(res => resolve(res)).catch(err => reject(err))
   })
