@@ -42,50 +42,50 @@ module.exports = function(data) {
       });
     });
   });
-}
+};
 
 // 可行部分
 
-  /* */
-  // console.log('准备发送电子邮件');
-  // var mailTransport = nodemailer.createTransport({
-  //   service: 'gmail',
-  //   auth: {
-  //     user: '',
-  //     pass: '',
-  //   },
-  // });
-  // var options = {
-  //   from: '',
-  //   to: '',
-  //   // cc         : ''  //抄送
-  //   // bcc      : ''    //密送
-  //   subject: '改成你的附件名',
-  //   text: '改成你的附件名',
-  //   html: '<h1>改成你的附件名</h1>',
-  //   attachments: [
-  //     {
-  //       filename: 'index.html', // 改成你的附件名
-  //       path: 'public/index.html', // 改成你的附件路径
-  //       cid: '00000001', // cid可被邮件使用
-  //     } /*,
-  //       {
-  //         filename: 'img2.png',            // 改成你的附件名
-  //         path: 'public/images/img2.png',  // 改成你的附件路径
-  //         cid: '00000002'                 // cid可被邮件使用
-  //       },*/,
-  //   ],
-  // };
+/* */
+// console.log('准备发送电子邮件');
+// var mailTransport = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: '',
+//     pass: '',
+//   },
+// });
+// var options = {
+//   from: '',
+//   to: '',
+//   // cc         : ''  //抄送
+//   // bcc      : ''    //密送
+//   subject: '改成你的附件名',
+//   text: '改成你的附件名',
+//   html: '<h1>改成你的附件名</h1>',
+//   attachments: [
+//     {
+//       filename: 'doc.html', // 改成你的附件名
+//       path: 'public/doc.html', // 改成你的附件路径
+//       cid: '00000001', // cid可被邮件使用
+//     } /*,
+//       {
+//         filename: 'img2.png',            // 改成你的附件名
+//         path: 'public/images/img2.png',  // 改成你的附件路径
+//         cid: '00000002'                 // cid可被邮件使用
+//       },*/,
+//   ],
+// };
 
-  // mailTransport.sendMail(options, function(err, msg) {
-  //   if (err) {
-  //     console.log(err);
-  //     res.render('index', { title: err });
-  //   } else {
-  //     console.log(msg);
-  //     res.render('index', { title: '已接收：' + msg.accepted });
-  //   }
-  // });
+// mailTransport.sendMail(options, function(err, msg) {
+//   if (err) {
+//     console.log(err);
+//     res.render('index', { title: err });
+//   } else {
+//     console.log(msg);
+//     res.render('index', { title: '已接收：' + msg.accepted });
+//   }
+// });
 
-  // return;
-  /* */
+// return;
+/* */

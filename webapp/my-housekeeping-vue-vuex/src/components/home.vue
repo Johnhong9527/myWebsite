@@ -25,7 +25,7 @@ export default {
   },
   created() {
     console.log(config.apiPath());
-    this.$store.commit('GET_USERINFO');
+    this.$store.commit('GET_USER');
   },
   methods: {},
   components: {

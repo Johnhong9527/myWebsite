@@ -14,6 +14,7 @@
     * [九宫格](chapter2/section2.1.md)
     * [css_12 等分圆](chapter2/section2.2.md)
     * [动画](chapter2/section2.3.md)
+    * [SVG](chapter2/section2.4.md)
 * [VUE](chapter3/README.md)
     * [vue换肤](chapter3/section3.1.md)
 

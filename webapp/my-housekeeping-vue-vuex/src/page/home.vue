@@ -60,11 +60,11 @@ export default {
     // 用户是否为管理员
     // self.registered = true;
     this.GET_USERROLE(self);
-    this.GET_USERINFO();
+    this.GET_USER();
   },
 
   methods: {
-    ...mapMutations(['GET_USERROLE', 'GET_USERINFO']),
+    ...mapMutations(['GET_USERROLE', 'GET_USER']),
 
     demand(index) {
       this.isRegistered();

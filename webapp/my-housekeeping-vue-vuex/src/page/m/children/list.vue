@@ -1,5 +1,6 @@
 <template>
   <div>
+    <x-header :back="back" title='m_list' bgColor="#333b45" strokeColor="#fff" />
     <h1>m_list</h1>
   </div>
 </template>
@@ -7,7 +8,9 @@
 import { mapMutations } from 'vuex';
 export default {
   data() {
-    return {};
+    return {
+      back: '/order/add',
+    };
   },
   created() {
     this.GET_USERROLE(this);

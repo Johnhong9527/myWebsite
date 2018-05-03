@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-header/>
+    <x-header :back="back" :title='title' bgColor="#333b45" strokeColor="#fff" />
     <h2>
       add order
     </h2>
@@ -10,7 +10,10 @@
 export default {
   name: 'add',
   data() {
-    return {};
+    return {
+      title: '添加订单',
+      back: '/order/list',
+    };
   },
 };
 </script>

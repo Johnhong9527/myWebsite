@@ -95,7 +95,7 @@ router.get('/read', function(req, res, next) {
 });
 // index
 router.get('/', function(req, res, next) {
-  res.sendFile(path.join(__dirname + 'kindle/index.html'));
+  res.sendFile(path.join(__dirname + 'kindle/doc.html'));
 });
 // 搜索
 router.get('/search', function(req, res, next) {

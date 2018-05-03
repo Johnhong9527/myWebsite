@@ -1,11 +1,15 @@
-module.exports = function (name,list) {
-
+module.exports = function(name, list) {
   function page() {
     let html = '';
     for (let i in list) {
-      html += `<navPoint id="navpoint-${Number.parseInt(i) + 2}" playOrder="${Number.parseInt(i) + 2}"><navLabel><text>${list[i].title}</text></navLabel><content src="page/text${list[i].index}.html#id${list[i].index}"/></navPoint>`
+      html += `<navPoint id="navpoint-${Number.parseInt(i) +
+        2}" playOrder="${Number.parseInt(i) + 2}"><navLabel><text>${
+        list[i].title
+      }</text></navLabel><content src="page/text${list[i].index}.html#id${
+        list[i].index
+      }"/></navPoint>`;
     }
-    return html
+    return html;
   }
 
   let html = `<?xml version="1.0"?>
@@ -23,5 +27,5 @@ module.exports = function (name,list) {
 ${page()}
 </navMap>
 </ncx>`;
-  return html
-}
+  return html;
+};

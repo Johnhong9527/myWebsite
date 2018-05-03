@@ -1,18 +1,22 @@
-module.exports = function (name, list) {
+module.exports = function(name, list) {
   function page1(list) {
     let html = '';
     for (let i in list) {
-      html += `<item id="text${ list[i].index}" media-type="text/x-oeb1-document" href="page/text${ list[i].index}.html"></item>\n`
+      html += `<item id="text${
+        list[i].index
+      }" media-type="text/x-oeb1-document" href="page/text${
+        list[i].index
+      }.html"></item>\n`;
     }
-    return html
+    return html;
   }
 
   function page2(list) {
     let html = '';
     for (let i in list) {
-      html += `<itemref idref="text${list[i].index}"/>\n`
+      html += `<itemref idref="text${list[i].index}"/>\n`;
     }
-    return html
+    return html;
   }
 
   let html = `<?xml version="1.0" encoding="iso-8859-1"?>
@@ -44,5 +48,5 @@ module.exports = function (name, list) {
          <reference type="text" title="Book" href="text1.html"/>
     </guide>
 </package>`;
-  return html
-}
+  return html;
+};

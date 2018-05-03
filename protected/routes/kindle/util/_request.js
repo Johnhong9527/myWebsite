@@ -3,7 +3,6 @@ let originRequest = require('request');
 const cheerio = require('cheerio');
 const iconv = require('iconv-lite');
 let headers = {
-
   // 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,images/webp,images/apng,*/*;q=0.8',
   // 'Accept-Encoding': 'gzip, deflate, br',
   // 'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -13,8 +12,9 @@ let headers = {
   // 'DNT': 1,
   // 'Host': 'www.boquge.com',
   // 'Upgrade-Insecure-Requests': 1,
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
-}
+  'User-Agent':
+    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+};
 
 // 封装的方法
 // function request(url, callback) {
@@ -31,7 +31,7 @@ let headers = {
 //
 // module.exports = request;
 
-module.exports = function (url) {
+module.exports = function(url) {
   return new Promise((resolve, reject) => {
     let options = {
       // url: `https://api.honghaitao.net/cros?url=${url}`,
@@ -40,18 +40,18 @@ module.exports = function (url) {
       encoding: null,
       //代理服务器
       //proxy: 'http://xxx.xxx.xxx.xxx:8888',
-      headers: headers
+      headers: headers,
     };
-    originRequest(options, function (err, res, body) {
-      if(err){
-        reject(err)
+    originRequest(options, function(err, res, body) {
+      if (err) {
+        reject(err);
       } else {
         let html = iconv.decode(body, 'gb2312');
         let $ = cheerio.load(html, {
           decodeEntities: false,
         });
-        resolve($)
+        resolve($);
       }
-    })
-  })
-}
+    });
+  });
+};

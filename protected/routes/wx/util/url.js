@@ -1,4 +1,4 @@
-module.exports = class Dictionary {
+class Dictionary {
   constructor() {
     this.items = {};
   }
@@ -44,4 +44,5 @@ module.exports = class Dictionary {
     }
     return values;
   }
-};
+}
+module.exports = Dictionary;
