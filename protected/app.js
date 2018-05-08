@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var kindle = require('./routes/kindle');
 var wx = require('./routes/wx');
 var cros = require('./routes/cros');
+var cros2 = require('./routes/cros/cros');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', index);
 app.use('/kindle', kindle);
 app.use('/wx', wx);
 app.use('/cros', cros);
+app.use('/cros2', cros2);
 
 
 app.all('*', (req, res, next) => {
