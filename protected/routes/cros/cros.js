@@ -79,11 +79,10 @@ router.get('/', function(req, res, next) {
   }
 
   cros(url_str).then(croes => {
-    console.log(croes);
     _res.send(croes);
   });
   
-  console.log(req.query);
+  // console.log(req.query);
 });
 
 module.exports = router;
