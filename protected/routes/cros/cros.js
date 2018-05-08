@@ -49,7 +49,7 @@ function cros(url) {
       if (err) {
         reject(err);
       } else {
-        let html = iconv.decode(body, 'utf-8');
+        let html = iconv.decode(body, 'gbk');
         let $ = cheerio.load(html, {
           decodeEntities: false,
         });
